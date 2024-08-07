@@ -1,8 +1,135 @@
-<div class="container">
-  
-<h1>Condominium Name Generator</h1>
-<div id="random-name"></div>
-<button class="btn btn-primary" id="generate">Generate</button>
-  
-</div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Seiver Lauth</title>
+        <meta
+          name="description"
+          content="This is Seiver's Website. Thanks for stopping by."
+        />
+        <link
+          rel="icon"
+          href=""
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="stylesheet" href="https://use.typekit.net/pjo4see.css" />
+        <style>
+          body {
+            margin: 0;
+            padding: 2em;
+            font-family: ibm-plex-mono, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            line-height: 1.2;
+            filter: url(#grainy);
+            background-color: #f3f4f1;
+          }
+          figure {
+            margin: 0 0 1em 0;
+            user-select: none;
+          }
+          h1,h2,h3,p {
+            padding: 0;
+            margin: 0;
+            font-size: 1em;
+            font-weight: normal;
+          }
+          h1 {
+            margin: 0 0 1em 0;
+          }
+          a {
+            color: #000;
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+          ul li{
+            display:flex;
+            margin: 0 1 0 0
+          }
+          ul li:before{
+            content:"⮑";
+            margin-right: .5em;
+          }
+          
+          address {
+            font-style: normal;
+          }
+          header,
+          main,
+          footer {
+            width: 30em;
+            max-width: 100%;
+          }
+          header:after ,
+          main:after {
+            content: "";
+            display: block;
+            margin: 1em 0;
+          }
+          footer:before{
+            content: "--";
+          }
+          footer {
+            margin: 1em 0 2em 0;
+          }
+          footer li {
+            display: inline;
+          }
+          footer li:before {
+            display: none;
+          }
+          footer address {
+            margin: 1em 0;
+          }
+        </style>
+      </head>
+<body>
+    <header>
+        <h1>Seiver Lauth</h1>
+        <h2> <a href="mailto:seiverlauth@gmail.com"> seiverlauth@gmail.com </a> </h2>
+        <h2>303.513.5547</h2>
+        <h2>San Diego, California</h2>
+    </header>
+    <main>
+        <p>I made this website simply to see if I could.</p>
+        <p>If you're reading this, it means I accomplished what I set out to do.</p>
+        <br>
+        <p>Anyway, here are some links:</p>
+        <ul>
+            <li><a href="https://ia600101.us.archive.org/9/items/lauth-resume-2024-v-3/LauthResume2024_v3.pdf"> Resume </a></li>
+            <li><a href="https://www.linkedin.com/in/seiverlauth/"> LinkedIn </a></li>
+            <li><a href="https://www.strava.com/athletes/42295596"> Strava </a></li>
+            <li><a href="https://open.spotify.com/user/seiverbeevs?si=cabb6a1d2f054f02"> Spotify </a></li>
+        </ul>
+        <p>  </p>
+        <p>  </p>
+        <p>  </p>
+        <p>  </p>
+    </main>
+    <footer>
+        <p>Thanks for stopping by.</p>
+        <p>&copy; 2024 SML</p>
+    </footer>
+    <svg>
+        <defs>
+          <filter id="grainy">
+            <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.6"
+            numOctaves="4"
+            result="grit"
+          ></feTurbulence>
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation=".3"
+              result="blur"
+            ></feGaussianBlur>
+          </filter>
+        </defs>
+      </svg>
+</body>
+</html>
 
