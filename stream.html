@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Seiver Lauth</title>
+        <title>Stream</title>
         <meta
           name="description"
-          content="This is Seiver's Website. Thanks for stopping by."
+          content="A mood stream, by Seiver."
         />
         <link
           rel="icon"
@@ -85,49 +85,33 @@
           footer address {
             margin: 1em 0;
           }
+          .mood-stream img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+          }
         </style>
       </head>
-<body>
-    <header>
-        <h1>Seiver Lauth</h1>
-        <h2> <a href="mailto:seiverlauth@gmail.com"> seiverlauth@gmail.com </a> </h2>
-        <h2>303.513.5547</h2>
-        <h2>San Diego, California</h2>
-    </header>
-    <main>
-        <p>I made this website simply to see if I could.</p>
-        <p>If you're reading this, it means I accomplished what I set out to do. Only up from here.</p>
-        <br>
-        <p>Anyway, here are some links:</p>
-        <ul>
-            <li><a href="https://drive.google.com/file/d/1JCvBeoTc8Q22ffpFfO43NPX00O2c_4gQ/view?usp=sharing"> Resume </a></li>
-            <li><a href="https://www.linkedin.com/in/seiverlauth/"> LinkedIn </a></li>
-            <li><a href="https://www.strava.com/athletes/42295596"> Strava </a></li>
-            <li><a href="https://open.spotify.com/user/seiverbeevs?si=cabb6a1d2f054f02"> Spotify </a></li>
-            <li><a href="stream.html"> Stream </a></li>
-        </ul>
-    </main>
-    <footer>
-        <p>Thanks for stopping by.</p>
-        <p>&copy; 2024 SML</p>
-    </footer>
-    <svg>
-        <defs>
-          <filter id="grainy">
-            <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.6"
-            numOctaves="4"
-            result="grit"
-          ></feTurbulence>
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation=".05"
-              result="blur"
-            ></feGaussianBlur>
-          </filter>
-        </defs>
-      </svg>
-</body>
-</html>
-
+      <body>
+        <h1>Stream</h1>
+        <div id="mood-stream" class="mood-stream"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetch('list-images.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const moodBoard = document.getElementById('mood-stream');
+                        data.forEach(image => {
+                            const img = document.createElement('img');
+                            img.src = `images/${image}`;
+                            img.alt = 'Mood Stream Image';
+                            moodBoard.appendChild(img);
+                        });
+                    })
+                    .catch(error => console.error('Error loading images:', error));
+            });
+        </script>
+    </body>
+    </html>
