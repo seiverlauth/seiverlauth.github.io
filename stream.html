@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Stream</title>
+        <title>Ssssound</title>
         <meta
           name="description"
           content="A mood stream, by Seiver."
@@ -89,29 +89,50 @@
             width: 100%;
             max-width: 300px;
             margin: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
+            border-radius: 3px;
           }
         </style>
       </head>
       <body>
-        <h1>Stream</h1>
-        <div id="mood-stream" class="mood-stream"></div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                fetch('list-images.php')
-                    .then(response => response.json())
-                    .then(data => {
-                        const moodBoard = document.getElementById('mood-stream');
-                        data.forEach(image => {
-                            const img = document.createElement('img');
-                            img.src = `images/${image}`;
-                            img.alt = 'Mood Stream Image';
-                            moodBoard.appendChild(img);
-                        });
-                    })
-                    .catch(error => console.error('Error loading images:', error));
-            });
-        </script>
+        <header>
+            <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> &gt; <span>Ssssound </span>
+        </nav>
+        </header>
+        <main>
+          <div class="mood-stream">
+              <img src="images/swim.jpg">
+              <img src="images/form.webp">
+              <img src="images/stamps.webp">
+              <img src="images/tennis.webp">
+              <img src="images/benzcup.webp">
+              <img src="images/bedroom.webp">
+              <img src="images/tony.webp">
+              <img src="images/lemons.webp">
+              <img src="images/loft.webp">
+              <img src="images/mymind.webp">
+              <img src="images/think.webp">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <img src="">
+              <!-- Add more images here -->
+          </div>
+      </main>
+      <footer>
+        <p>Thanks for stopping by.</p>
+        <p>&copy; 2024 SML</p>
+    </footer>
     </body>
     </html>
