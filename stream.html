@@ -100,79 +100,105 @@
         </nav>
         </header>
         <main>
-          <div class="mood-stream">
-              <img src="images/yorker.jpeg">
-              <img src="images/showers.jpeg">
-              <img src="images/blue.jpeg">
-              <img src="images/partners.jpeg">
-              <img src="images/greenporche.jpeg">
-              <img src="images/understand.jpeg">
-              <img src="images/corridor.jpeg">
-              <img src="images/tomford.jpeg">
-              <img src="images/two.jpeg">
-              <img src="images/squaremobius.jpeg">
-              <img src="images/nabisco.jpeg">
-              <img src="images/tea.jpeg">
-              <img src="">
-              <img src="images/swim.jpg" loading="lazy">  
-              <img src="images/form.webp" loading="lazy">
-              <img src="images/stamps.webp" loading="lazy">
-              <img src="images/tennis.webp" loading="lazy">
-              <img src="images/benzcup.webp" loading="lazy">
-              <img src="images/bedroom.webp" loading="lazy">
-              <img src="images/tony.webp" loading="lazy">
-              <img src="images/lemons.webp" loading="lazy">
-              <img src="images/loft.webp" loading="lazy">  
-              <img src="images/mymind.webp" loading="lazy">
-              <img src="images/think.webp" loading="lazy">
-              <img src="images/surreal.webp" loading="lazy">
-              <img src="images/happiness.webp" loading="lazy">
-              <img src="images/budda.webp" loading="lazy">
-              <img src="images/time.jpeg" loading="lazy">
-              <img src="images/depression.webp" loading="lazy">
-              <img src="images/watch.webp" loading="lazy">
-              <img src="images/point.webp" loading="lazy">
-              <img src="images/openmind.webp" loading="lazy">
-              <img src="images/beauty.webp" loading="lazy">
-              <img src="images/self.webp" loading="lazy">
-              <img src="images/progress.png" loading="lazy">
-              <img src="images/flooded.jpeg" loading="lazy">
-              <img src="images/afterlife.jpeg" loading="lazy">
-              <img src="images/motivation.jpeg" loading="lazy">
-              <img src="images/birds.jpeg" loading="lazy">
-              <img src="images/jamal.png" loading="lazy">
-              <img src="images/waves.jpeg" loading="lazy">
-              <img src="images/comic.jpeg" loading="lazy">
-              <img src="images/downtown.jpeg" loading="lazy">
-              <img src="images/spectrum.jpeg" loading="lazy">
-              <img src="images/colorwheel.png" loading="lazy">
-              <img src="images/court.jpeg" loading="lazy">
-              <img src="images/process.png" loading="lazy">
-              <img src="images/desk.jpeg" loading="lazy">
-              <img src="images/perplexity.jpeg" loading="lazy">
-              <img src="images/trees.jpeg" loading="lazy">
-              <img src="images/socrates.jpeg" loading="lazy">
-              <img src="images/aura.jpeg" loading="lazy">
-              <img src="images/expand.jpeg" loading="lazy">
-              <img src="images/monkeys.jpeg" loading="lazy">
-              <img src="images/tweet.jpeg" loading="lazy">
-              <img src="images/room.jpeg" loading="lazy">
-              <img src="images/sea.jpeg" loading="lazy">
-              <img src="images/nostalgia.jpeg" loading="lazy">
-              <img src="images/lockheed.jpeg" loading="lazy">
-              <img src="images/bed.jpeg" loading="lazy">
-              <img src="images/rocks.jpeg" loading="lazy">
-              <img src="images/wall.jpeg" loading="lazy">
-              <img src="images/keys.jpeg" loading="lazy">
-              <img src="images/porche.webp" loading="lazy">            
-              <img src="">
-              <img src="">
-              <!-- Add more images here -->
+          <div class="mood-stream" id="moodStream">
+              <!-- Images will be shuffled and inserted here by JavaScript -->
           </div>
       </main>
       <footer>
-        <p>Thanks for stopping by.</p>
-        <p>&copy; 2024 SML</p>
-    </footer>
-    </body>
-    </html>
+          <p>Thanks for stopping by.</p>
+          <p>&copy; 2024 SML</p>
+      </footer>
+      
+      <script>
+          // Array of image sources
+          const images = [
+              "images/yorker.jpeg",
+              "images/showers.jpeg",
+              "images/blue.jpeg",
+              "images/partners.jpeg",
+              "images/greenporche.jpeg",
+              "images/understand.jpeg",
+              "images/corridor.jpeg",
+              "images/tomford.jpeg",
+              "images/two.jpeg",
+              "images/squaremobius.jpeg",
+              "images/nabisco.jpeg",
+              "images/tea.jpeg",
+              "images/swim.jpg",
+              "images/form.webp",
+              "images/stamps.webp",
+              "images/tennis.webp",
+              "images/benzcup.webp",
+              "images/bedroom.webp",
+              "images/tony.webp",
+              "images/lemons.webp",
+              "images/loft.webp",
+              "images/mymind.webp",
+              "images/think.webp",
+              "images/surreal.webp",
+              "images/happiness.webp",
+              "images/budda.webp",
+              "images/time.jpeg",
+              "images/depression.webp",
+              "images/watch.webp",
+              "images/point.webp",
+              "images/openmind.webp",
+              "images/beauty.webp",
+              "images/self.webp",
+              "images/progress.png",
+              "images/flooded.jpeg",
+              "images/afterlife.jpeg",
+              "images/motivation.jpeg",
+              "images/birds.jpeg",
+              "images/jamal.png",
+              "images/waves.jpeg",
+              "images/comic.jpeg",
+              "images/downtown.jpeg",
+              "images/spectrum.jpeg",
+              "images/colorwheel.png",
+              "images/court.jpeg",
+              "images/process.png",
+              "images/desk.jpeg",
+              "images/perplexity.jpeg",
+              "images/trees.jpeg",
+              "images/socrates.jpeg",
+              "images/aura.jpeg",
+              "images/expand.jpeg",
+              "images/monkeys.jpeg",
+              "images/tweet.jpeg",
+              "images/room.jpeg",
+              "images/sea.jpeg",
+              "images/nostalgia.jpeg",
+              "images/lockheed.jpeg",
+              "images/bed.jpeg",
+              "images/rocks.jpeg",
+              "images/wall.jpeg",
+              "images/keys.jpeg",
+              "images/porche.webp"
+          ];
+      
+          // Shuffle function using Fisher-Yates algorithm
+          function shuffle(array) {
+              for (let i = array.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [array[i], array[j]] = [array[j], array[i]];
+              }
+              return array;
+          }
+      
+          // Get the div where the images will be displayed
+          const moodStreamDiv = document.getElementById('moodStream');
+      
+          // Shuffle the images array
+          const shuffledImages = shuffle(images);
+      
+          // Create image elements and append them to the div
+          shuffledImages.forEach(src => {
+              const img = document.createElement('img');
+              img.src = src;
+              img.loading = "lazy";
+              moodStreamDiv.appendChild(img);
+          });
+      </script>
+      </body>
+      </html>
