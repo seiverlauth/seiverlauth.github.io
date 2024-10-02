@@ -185,31 +185,79 @@
               "images/lebron.jpeg", 
               "images/cloudtree.jpeg", 
               "images/beingmaking.jpeg", 
-              "images/aidogs.jpeg"
-          ];
+              "images/aidogs.jpeg",
+              "images/libraryposter.jpeg",
+              "images/foggyporche.jpeg",
+              "images/circlesnow.jpeg",
+              "images/djforher.jpeg",
+              "images/touchgrass.jpeg",
+              "images/movementstennis.jpeg",
+              "images/creativeprocess.jpeg",
+              "images/dogchart.jpeg",
+              "images/dreamharder.jpeg",
+              "images/range.jpeg",
+              "images/houseart.jpeg"]
       
           // Shuffle function using Fisher-Yates algorithm
           function shuffle(array) {
-              for (let i = array.length - 1; i > 0; i--) {
-                  const j = Math.floor(Math.random() * (i + 1));
-                  [array[i], array[j]] = [array[j], array[i]];
-              }
-              return array;
-          }
-      
-          // Get the div where the images will be displayed
-          const moodStreamDiv = document.getElementById('moodStream');
-      
-          // Shuffle the images array
-          const shuffledImages = shuffle(images);
-      
-          // Create image elements and append them to the div
-          shuffledImages.forEach(src => {
-              const img = document.createElement('img');
-              img.src = src;
-              img.loading = "lazy";
-              moodStreamDiv.appendChild(img);
-          });
-      </script>
-      </body>
-      </html>
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        const moodStreamDiv = document.getElementById('moodStream');
+        const shuffledImages = shuffle(images);
+
+        function createImageElement(src) {
+            const img = document.createElement('img');
+            img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // 1x1 transparent gif
+            img.setAttribute('data-src', src);
+            return img;
+        }
+
+        function loadImages() {
+            shuffledImages.forEach(src => {
+                const img = createImageElement(src);
+                moodStreamDiv.appendChild(img);
+            });
+            lazyLoad();
+        }
+
+        function lazyLoad() {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, options);
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+
+        // Load all images at once, but lazy load their content
+        loadImages();
+
+        // Fallback for browsers that don't support IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            lazyImages.forEach(img => {
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+            });
+        }
+    </script>
+  </body>
+  </html>
