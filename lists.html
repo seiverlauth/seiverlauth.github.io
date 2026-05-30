@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lists</title>
+        <meta name="description" content="Lists" />
+        <link rel="icon" href="https://github.com/seiverlauth/seiverlauth.github.io/blob/master/fav.png?raw=true" type="image/png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="stylesheet" href="https://use.typekit.net/pjo4see.css" />
+        <style>
+          body {
+            margin: 0;
+            padding: 2em;
+            font-family: ibm-plex-mono, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            line-height: 1.2;
+            background-color: #f3f4f1;
+          }
+          h1,h2,h3,p { padding: 0; margin: 0; font-size: 1em; font-weight: normal; }
+          h1 { margin: 0 0 1em 0; }
+          a { color: #000; text-decoration: none; }
+          a:hover { text-decoration: underline; }
+          header, main, footer { width: 30em; max-width: 100%; }
+          header:after, main:after { content: ""; display: block; margin: 1em 0; }
+          footer:before { content: "--"; }
+          footer { margin: 1em 0 2em 0; }
+
+          .list-item { margin-bottom: 1em; }
+
+          .list-toggle {
+            cursor: pointer;
+            user-select: none;
+          }
+
+          .list-toggle:before { content: "⮑ "; }
+
+          .list-toggle:hover { text-decoration: underline; }
+
+          .list-content {
+            display: none;
+            margin-top: 0.5em;
+            margin-left: 1.2em;
+            line-height: 1.6;
+          }
+
+          .list-content.open { display: block; }
+
+          .list-content p { margin: 0.2em 0; }
+
+          .list-content p:before { content: "— "; }
+
+          .subheading {
+            margin-top: 0.6em;
+            margin-bottom: 0.2em;
+            text-decoration: underline;
+          }
+
+          .subheading:before { content: none; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a> &gt; <span>Lists</span>
+            </nav>
+        </header>
+        <main id="listsContainer"></main>
+        <footer>
+            <p>Thanks for stopping by.</p>
+            <p>&copy; 2026 SML</p>
+        </footer>
+
+        <script>
+            const lists = [
+                {
+                    title: "Mount Rushmore: Movies",
+                    items: ["Inglorious Basterds", "Arrival", "Dazed and Confused", "Good Will Hunting"]
+                },
+                {
+                    title: "Mount Rushmore: Pixar",
+                    items: ["WALL-E", "Incredibles", "Monsters Inc", "Cars"]
+                },
+                {
+                    title: "Mount Rushmore: Sandwiches",
+                    items: ["Turkey club", "Chicken bacon ranch", "Pulled pork", "Fried chicken"]
+                },
+                {
+                    title: "Mount Rushmore: Old Money Last Names",
+                    items: ["Lightfoot", "Moneypenny", "Poindexter", "Drinkwine"]
+                },
+                {
+                    title: "Favorite Foods",
+                    items: [
+                        "Blueberries (fresh picked)",
+                        "Pineapple",
+                        "Roasted broccoli",
+                        "Banana with peanut butter",
+                        "Rice",
+                        "Pad thai (must be spicy)",
+                        "Tuna avocado sushi roll",
+                        "Fried chicken sandwich (must be spicy)",
+                        "Mexican breakfast",
+                        "Turkey club",
+                        "Guacamole"
+                    ]
+                },
+                {
+                    title: "Things To Do When You Visit SD",
+                    sections: [
+                        {
+                            heading: "Encinitas",
+                            items: [
+                                "Coffee: Necessity Coffee, Bump, Lofty, Rose Hill Purveyors",
+                                "Breakfast: Le Papagayo, Goodonya, Nectarine Grove",
+                                "Food: Fish 101, Temaki Bar, Seaside Market, Hamburger Hut, Birdseye Kitchen",
+                                "Drinks: Duck Foot, Fox Point Farms, Saloon, 1st Street, Roxy, Shanty, Kraken, Leucadian, Sago, Shelter",
+                                "Meditation Gardens",
+                                "Coastal Rail Trail"
+                            ]
+                        },
+                        {
+                            heading: "North park, South park, Mission Valley",
+                            items: [
+                                "Balboa Park",
+                                "The Lafayette Hotel",
+                                "Food: Sunnyboy Biscuit Co, Grand Ole BBQ, Louisiana Purchase, Buona Forchetta, Bosforo, Tribute Pizza, Finca, Cassette Pizza, Fortunate Son, Dunedin",
+                                "Drinks: Polite Provisions, Pure Project, Fall Brewing, Oddish Wine"
+                            ]
+                        },
+                        {
+                            heading: "Little Italy / Downtown",
+                            items: [
+                                "Food: Morning Glory, Monello, Barbusa, Crack Shack, Nolita Hall, Cocina 35",
+                                "Drinks: Allegro, Vino Carta, Ballast Point"
+                            ]
+                        },
+                        {
+                            heading: "Pacific Beach and Mission Beach",
+                            items: [
+                                "Food: Nico's Fish Market, Oscar's Mexican Seafood, Leilani's Cafe, Harry's Taco Club, Enoteca Adriano, The Fishery",
+                                "Drinks: Surf Lounge, Maverick's Beach Club, Duck Dive",
+                                "Walk the strand or the bay — good people watching"
+                            ]
+                        },
+                        {
+                            heading: "Ocean Beach, Point Loma, Sunset Cliffs",
+                            items: [
+                                "Cabrillo National Monument",
+                                "Sunset Cliffs",
+                                "Food: OB Noodle House, It's Raw Poke",
+                                "Drinks: OB Brewery, Harbor Town Pub, Eppig Brewing, Wonderland Ocean Pub, Sunshine"
+                            ]
+                        },
+                        {
+                            heading: "La Jolla",
+                            items: [
+                                "La Jolla Cove for seals",
+                                "La Jolla Shores walk",
+                                "Mount Soledad for views",
+                                "Torrey Pines Nature Reserve"
+                            ]
+                        },
+                        {
+                            heading: "Del Mar",
+                            items: [
+                                "Stratford Court Cafe",
+                                "Monarch Ocean Pub",
+                                "Viewpoint Brewery",
+                                "Tide Park Beach walk"
+                            ]
+                        },
+                        {
+                            heading: "Coronado",
+                            items: [
+                                "Hotel Del",
+                                "Walk Coronado Ave / Ocean Blvd"
+                            ]
+                        },
+                        {
+                            heading: "Favorite Walks",
+                            items: [
+                                "Coronado neighborhoods (Coronado Ave / Ocean Blvd)",
+                                "Mission Beach strand or bay",
+                                "La Jolla Shores",
+                                "Tide Park Beach",
+                                "Coastal Rail Trail in Encinitas"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Things I Find Interesting",
+                    items: [
+                        "Predictive processing",
+                        "Bayesian prediction",
+                        "Mimetic desire",
+                        "The ad market and why certain ads get chosen",
+                        "Cybersecurity and AI",
+                        "Sports as a form of specialization",
+                        "BJ Fogg's work on behavior design",
+                        "Photosynthesis as a quantum effect",
+                        "The endocrine system",
+                        "Looking at stocks through the lens of products I've actually used",
+                        "Wealth inequality and historical cycles",
+                        "Elite overproduction theory",
+                        "The Network State",
+                        "The physical economy buildout",
+                        "Sanctions enforcement and shadow fleet tracking",
+                        "The Voting Rights Act as a constraint on geometric redistricting",
+                        "Sleep talking and somniloquy",
+                        "Peter Turchin's cliodynamics and elite overproduction theory"
+                    ]
+                },
+                {
+                    title: "Things I've Learned",
+                    items: [
+                        "Why tigers aren't green: most prey are red-green colorblind, and mammals can't produce green",
+                        "The best Prisoner's Dilemma strategy: be nice, forgiving, retaliatory, and clear",
+                        "The Cosmic Microwave Background is the oldest light we can detect",
+                        "The largest known cosmic structure is the Hercules-Corona Borealis Great Wall, spanning 10 billion light-years",
+                        "Neutrinos are among the most abundant particles in the universe and barely interact with matter",
+                        "Homo sapiens can live in groups of 150+ because we tell shared fictional stories",
+                        "Europe conquered most of the world not because of inherent advantage but because they invested in new knowledge",
+                        "The marathon is named for the distance between Marathon and Athens",
+                        "The US population nearly quadrupled in the 20th century — at 1.72 TFR we're below replacement rate",
+                        "Turkish Airlines flies to more destinations than any other international airline",
+                        "The Medici family ran the world for several hundred years",
+                        "Backpropagation uses the chain rule to find the gradient of the loss function",
+                        "The Ising Model predicts spin values at a critical point"
+                        "Moby Dick was inspired by a real whale named Mocha Dick that rammed ships near Mocha Island, Chile",
+                        "KFC was franchised when Colonel Sanders was 65",
+                        "The chop in pork chop comes from the act of chopping through bone with a cleaver",
+                        "The Hoosier etymology is genuinely unknown despite scholarly research"
+                    ]
+                }
+            ];
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            function buildLists() {
+                const container = document.getElementById('listsContainer');
+                const shuffled = shuffle([...lists]);
+
+                shuffled.forEach(list => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'list-item';
+
+                    const toggle = document.createElement('p');
+                    toggle.className = 'list-toggle';
+                    toggle.textContent = list.title;
+
+                    const content = document.createElement('div');
+                    content.className = 'list-content';
+
+                    if (list.sections) {
+                        list.sections.forEach(section => {
+                            const heading = document.createElement('p');
+                            heading.className = 'subheading';
+                            heading.textContent = section.heading;
+                            content.appendChild(heading);
+
+                            section.items.forEach(item => {
+                                const p = document.createElement('p');
+                                p.textContent = item;
+                                content.appendChild(p);
+                            });
+                        });
+                    } else {
+                        list.items.forEach(item => {
+                            const p = document.createElement('p');
+                            p.textContent = item;
+                            content.appendChild(p);
+                        });
+                    }
+
+                    toggle.addEventListener('click', () => {
+                        content.classList.toggle('open');
+                    });
+
+                    wrapper.appendChild(toggle);
+                    wrapper.appendChild(content);
+                    container.appendChild(wrapper);
+                });
+            }
+
+            buildLists();
+        </script>
+    </body>
+</html>
