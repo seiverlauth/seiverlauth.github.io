@@ -52,10 +52,11 @@
           .subheading {
             margin-top: 0.6em;
             margin-bottom: 0.2em;
-            text-decoration: underline;
           }
 
-          .list-content p.subheading:before { content: none; }
+          .list-content p.catline:before { content: none; }
+
+          .list-content span.category { text-decoration: underline; }
         </style>
     </head>
     <body>
@@ -247,8 +248,24 @@
                             content.appendChild(heading);
 
                             section.items.forEach(item => {
+                                const splitIndex = item.indexOf(': ');
                                 const p = document.createElement('p');
-                                p.textContent = item;
+                                p.className = 'catline';
+
+                                if (splitIndex !== -1) {
+                                    const label = item.slice(0, splitIndex);
+                                    const places = item.slice(splitIndex + 2);
+
+                                    const span = document.createElement('span');
+                                    span.className = 'category';
+                                    span.textContent = label;
+
+                                    p.appendChild(span);
+                                    p.appendChild(document.createTextNode(': ' + places));
+                                } else {
+                                    p.textContent = item;
+                                }
+
                                 content.appendChild(p);
                             });
                         });
