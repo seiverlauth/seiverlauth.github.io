@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Mind</title>
+        <meta
+          name="description"
+          content="My Mind"
+        />
+        <link
+          rel="icon"
+          href="https://github.com/seiverlauth/seiverlauth.github.io/blob/master/fav.png?raw=true"
+          type="image/png"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="stylesheet" href="https://use.typekit.net/pjo4see.css" />
+        <style>
+          body {
+            margin: 0;
+            padding: 2em;
+            font-family: ibm-plex-mono, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            line-height: 1.2;
+            filter: url(#grainy);
+            background-color: #f3f4f1;
+          }
+          figure {
+            margin: 0 0 1em 0;
+            user-select: none;
+          }
+          h1,h2,h3,p {
+            padding: 0;
+            margin: 0;
+            font-size: 1em;
+            font-weight: normal;
+          }
+          h1 {
+            margin: 0 0 1em 0;
+          }
+          a {
+            color: #000;
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+          ul li{
+            display:flex;
+            margin: 0 1 0 0
+          }
+          ul li:before{
+            content:"⮑";
+            margin-right: .5em;
+          }
+          
+          address {
+            font-style: normal;
+          }
+          header,
+          main,
+          footer {
+            width: 30em;
+            max-width: 100%;
+          }
+          header:after ,
+          main:after {
+            content: "";
+            display: block;
+            margin: 1em 0;
+          }
+          footer:before{
+            content: "--";
+          }
+          footer {
+            margin: 1em 0 2em 0;
+          }
+          footer li {
+            display: inline;
+          }
+          footer li:before {
+            display: none;
+          }
+          footer address {
+            margin: 1em 0;
+          }
+          .mood-stream img {
+            width: 100%;
+            max-width: 500px;
+            margin: 10px;
+            border-radius: 3px;
+          }
+        </style>
+      </head>
+      <body>
+        <header>
+            <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> &gt; <span>My Mind</span>
+        </nav>
+        </header>
+        <main>
+          <div class="mood-stream" id="moodStream">
+              <!-- Images will be shuffled and inserted here by JavaScript -->
+          </div>
+      </main>
+      <footer>
+          <p>Thanks for stopping by.</p>
+          <p>&copy; 2026 SML</p>
+      </footer>
+      
+      <script>
+          // Array of image sources
+          const images = [
+              "images/yorker.jpeg",
+                "images/showers.jpeg",
+                "images/blue.jpeg",
+                "images/partners.jpeg",
+                "images/greenporche.jpeg",
+                "images/understand.jpeg",
+                "images/corridor.jpeg",
+                "images/tomford.jpeg",
+                "images/two.jpeg",
+                "images/squaremobius.jpeg",
+                "images/nabisco.jpeg",
+                "images/tea.jpeg",
+                "images/swim.jpg",
+                "images/form.webp",
+                "images/stamps.webp",
+                "images/tennis.webp",
+                "images/benzcup.webp",
+                "images/bedroom.webp",
+                "images/tony.webp",
+                "images/lemons.webp",
+                "images/loft.webp",
+                "images/mymind.webp",
+                "images/think.webp",
+                "images/surreal.webp",
+                "images/happiness.webp",
+                "images/budda.webp",
+                "images/time.jpeg",
+                "images/depression.webp",
+                "images/watch.webp",
+                "images/point.webp",
+                "images/openmind.webp",
+                "images/beauty.webp",
+                "images/self.webp",
+                "images/progress.png",
+                "images/flooded.jpeg",
+                "images/afterlife.jpeg",
+                "images/motivation.jpeg",
+                "images/birds.jpeg",
+                "images/jamal.png",
+                "images/waves.jpeg",
+                "images/comic.jpeg",
+                "images/downtown.jpeg",
+                "images/spectrum.jpeg",
+                "images/colorwheel.png",
+                "images/court.jpeg",
+                "images/process.png",
+                "images/desk.jpeg",
+                "images/perplexity.jpeg",
+                "images/trees.jpeg",
+                "images/socrates.jpeg",
+                "images/aura.jpeg",
+                "images/expand.jpeg",
+                "images/monkeys.jpeg",
+                "images/tweet.jpeg",
+                "images/room.jpeg",
+                "images/sea.jpeg",
+                "images/nostalgia.jpeg",
+                "images/lockheed.jpeg",
+                "images/bed.jpeg",
+                "images/rocks.jpeg",
+                "images/wall.jpeg",
+                "images/keys.jpeg",
+                "images/porche.webp",
+                "images/skater.jpeg",
+                "images/office.jpeg",
+                "images/gh.jpeg",
+                "images/tiger.png",
+                "images/thugtravis.png",
+                "images/certainty.jpeg",
+                "images/mansion.jpeg",
+                "images/lebron.jpeg",
+                "images/cloudtree.jpeg",
+                "images/beingmaking.jpeg",
+                "images/aidogs.jpeg",
+                "images/libraryposter.jpeg",
+                "images/foggyporche.jpeg",
+                "images/circlesnow.jpeg",
+                "images/djforher.jpeg",
+                "images/touchgrass.jpeg",
+                "images/movementstennis.jpeg",
+                "images/creativeprocess.jpeg",
+                "images/dogchart.jpeg",
+                "images/dreamharder.jpeg",
+                "images/range.jpeg",
+                "images/houseart.jpeg",
+                "images/tee.webp",
+                "images/plantcreatures.webp",
+                "images/imfinished.webp",
+                "images/trainmountain.webp",
+                "images/ancienttemple.webp",
+                "images/greenhouse.webp",
+                "images/childrenpoem.webp",
+                "images/trainview.webp",
+                "images/midcenturyliving.webp",
+                "images/starsmindfulness.webp",
+                "images/topsoil.webp",
+                "images/husbandwifetree.webp",
+                "images/nextlife.webp",
+                "images/tennisstamp.webp",
+                "images/longestwalk.webp",
+                "images/nonstopsupersonic.webp",
+                "images/uphillrock.webp",
+                "images/outsidebenefits.webp",
+                "images/lionporsche.webp",
+                "images/f1batman.webp",
+                "images/prosandcons.webp",
+                "images/arcteryx.webp",
+                "images/badnews.webp",
+                "images/bomb.webp",
+                "images/catcar.webp",
+                "images/circleflower.webp",
+                "images/circlewalk.webp",
+                "images/clockclock.webp",
+                "images/coins.webp",
+                "images/cornell.webp",
+                "images/cslyc.webp",
+                "images/defunctcapital.webp",
+                "images/glassbook.webp",
+                "images/indoorcamp.webp",
+                "images/jets.webp",
+                "images/labels.webp",
+                "images/love111.webp",
+                "images/minimalfarm.webp",
+                "images/mtjoygoose.webp",
+                "images/nogratefuldead.webp",
+                "images/quantum.webp",
+                "images/realorpretent.webp",
+                "images/refill.webp",
+                "images/skiing.webp",
+                "images/spongebob.webp",
+                "images/stopscrolling.webp",
+                "images/tags.webp",
+                "images/ties.webp",
+                "images/transportefficiency.webp",
+                "images/watchtypeshi.webp",
+                "images/woodcomp.webp",
+                "images/rocket.webp",
+                "images/dostevsky.webp",
+                "images/unkindtruth.webp",
+                "images/samsara.webp",
+                "images/puppytoes.webp",
+                "images/fire.webp",
+                "images/circuits.webp",
+                "images/minecraft.webp",
+                "images/amg.webp",
+                "images/firstclass.webp",
+                "images/surfaces.webp",
+                "images/refocus.webp",
+                "images/bookmark.webp",
+                "images/mw2.webp",
+                "images/substances.webp",
+                "images/hustle.webp",
+                "images/friends.webp",
+                "images/pets.webp",
+                "images/birdmail.webp",
+                "images/forget.webp",
+                "images/apollo.webp",
+                "images/laughter.webp",
+                "images/lunarcartoon.webp",
+                "images/gd.webp",
+                "images/augustagolf.webp",
+                "images/cruiser.webp",
+                "images/mountaintennis.webp",
+                "images/characters.webp",
+                "images/claude.webp",
+                "images/return.webp",
+                "images/sun.webp",
+                "images/suffering.webp",
+                "images/dodge.webp"]
+      
+          // Shuffle function using Fisher-Yates algorithm
+          function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        const moodStreamDiv = document.getElementById('moodStream');
+        const shuffledImages = shuffle(images);
+
+        function createImageElement(src) {
+            const img = document.createElement('img');
+            img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // 1x1 transparent gif
+            img.setAttribute('data-src', src);
+            return img;
+        }
+
+        function loadImages() {
+            shuffledImages.forEach(src => {
+                const img = createImageElement(src);
+                moodStreamDiv.appendChild(img);
+            });
+            lazyLoad();
+        }
+
+        function lazyLoad() {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, options);
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+
+        // Load all images at once, but lazy load their content
+        loadImages();
+
+        // Fallback for browsers that don't support IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            lazyImages.forEach(img => {
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+            });
+        }
+    </script>
+  </body>
+  </html>
