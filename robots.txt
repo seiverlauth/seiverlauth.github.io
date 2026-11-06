@@ -1,0 +1,5 @@
+# Everyone is welcome here, including AI agents and crawlers.
+User-agent: *
+Allow: /
+
+Sitemap: https://seiverlauth.com/sitemap.xml

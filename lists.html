@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Lists</title>
-        <meta name="description" content="Lists" />
-        <link rel="icon" href="https://github.com/seiverlauth/seiverlauth.github.io/blob/master/fav.png?raw=true" type="image/png" />
+        <title>Lists · Seiver Lauth</title>
+        <meta name="description" content="Seiver Lauth's lists: Mount Rushmores, favorite foods, a San Diego guide, and things I'm curious about." />
+        <link rel="canonical" href="https://seiverlauth.com/lists.html" />
+        <link rel="icon" href="fav.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="stylesheet" href="https://use.typekit.net/pjo4see.css" />
@@ -31,19 +32,18 @@
 
           .list-toggle {
             cursor: pointer;
+            list-style: none;
             user-select: none;
           }
 
           .list-toggle:hover { text-decoration: underline; }
+          .list-toggle::-webkit-details-marker { display: none; }
 
           .list-content {
-            display: none;
             margin-top: 0.5em;
             margin-left: 1.2em;
             line-height: 1.6;
           }
-
-          .list-content.open { display: block; }
 
           .list-content p { margin: 0.2em 0; }
 
@@ -69,225 +69,140 @@
                 <a href="index.html">Home</a> &gt; <span>Lists</span>
             </nav>
         </header>
-        <main id="listsContainer"></main>
+        <main id="listsContainer">
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Mount Rushmore: Movies</summary>
+              <div class="list-content">
+                <p>Arrival</p>
+                <p>Interstellar</p>
+                <p>Dazed and Confused</p>
+                <p>Good Will Hunting</p>
+              </div>
+            </details>
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Mount Rushmore: Pixar</summary>
+              <div class="list-content">
+                <p>WALL-E</p>
+                <p>Incredibles</p>
+                <p>Monsters Inc</p>
+                <p>Cars</p>
+              </div>
+            </details>
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Mount Rushmore: Sandwiches</summary>
+              <div class="list-content">
+                <p>Turkey club</p>
+                <p>Banh mi</p>
+                <p>Pulled pork with coleslaw</p>
+                <p>Fried chicken</p>
+              </div>
+            </details>
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Mount Rushmore: Old Money Last Names</summary>
+              <div class="list-content">
+                <p>Lightfoot</p>
+                <p>Moneypenny</p>
+                <p>Poindexter</p>
+                <p>Drinkwine</p>
+              </div>
+            </details>
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Favorite Foods</summary>
+              <div class="list-content">
+                <p>Blueberries (fresh picked)</p>
+                <p>Pineapple</p>
+                <p>Roasted broccoli</p>
+                <p>Banana with peanut butter</p>
+                <p>Rice</p>
+                <p>Pad thai (must be spicy)</p>
+                <p>Tuna avocado sushi roll</p>
+                <p>Fried chicken sandwich (must be spicy)</p>
+                <p>Mexican breakfast</p>
+                <p>Guacamole</p>
+              </div>
+            </details>
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Things To Do When You Visit SD</summary>
+              <div class="list-content">
+                <p class="subheading">Encinitas</p>
+                <p class="catline"><span class="category">Coffee</span>: Necessity Coffee, Bump, Lofty, Rose Hill Purveyors</p>
+                <p class="catline"><span class="category">Breakfast</span>: Le Papagayo, Goodonya, Nectarine Grove</p>
+                <p class="catline"><span class="category">Food</span>: Fish 101, Temaki Bar, Seaside Market, Hamburger Hut, Birdseye Kitchen, Corner Pizza</p>
+                <p class="catline"><span class="category">Drinks</span>: Duck Foot, Fox Point Farms, Saloon, 1st Street, Roxy, Shanty, Kraken, Leucadian, Sago, Shelter</p>
+                <p class="catline"><span class="category">See</span>: Meditation Gardens</p>
+                <p class="catline"><span class="category">Walk</span>: Coastal Rail Trail</p>
+                <p class="subheading">North Park, South Park, Mission Valley</p>
+                <p class="catline"><span class="category">Food</span>: Sunnyboy Biscuit Co, Grand Ole BBQ, Louisiana Purchase, Buona Forchetta, Bosforo, Tribute Pizza, Finca, Cassette Pizza, Fortunate Son, Dunedin</p>
+                <p class="catline"><span class="category">Drinks</span>: Polite Provisions, Pure Project, Fall Brewing, Oddish Wine</p>
+                <p class="catline"><span class="category">See</span>: Balboa Park, The Lafayette Hotel</p>
+                <p class="subheading">Bay Hill</p>
+                <p class="catline"><span class="category">Food</span>: High Dive, Bay Hill Tavern, Pit Stop Pizza, Siesels Meats and Deli, Bay Park Coffee</p>
+                <p class="catline"><span class="category">Drinks</span>: Sidecar, Coronado Brewing</p>
+                <p class="subheading">Little Italy &amp; Downtown</p>
+                <p class="catline"><span class="category">Food</span>: Allegro, Morning Glory, Monello, Barbusa, Crack Shack, Nolita Hall, Cocina 35</p>
+                <p class="catline"><span class="category">Drinks</span>: Vino Carta, Ballast Point</p>
+                <p class="subheading">Pacific Beach &amp; Mission Beach</p>
+                <p class="catline"><span class="category">Food</span>: Nico's Fish Market, Costa Brava, Leilani's Cafe, Harry's Taco Club, Enoteca Adriano</p>
+                <p class="catline"><span class="category">Drinks</span>: PB Pub, Maverick's Beach Club, Duck Dive, West End, Tavern, Silver Fox</p>
+                <p class="catline"><span class="category">Walk</span>: The strand or the bay (good people watching)</p>
+                <p class="subheading">Ocean Beach, Point Loma, Sunset Cliffs</p>
+                <p class="catline"><span class="category">Food</span>: Ikes Love and Sandwiches, OB Noodle House, It's Raw Poke</p>
+                <p class="catline"><span class="category">Drinks</span>: OB Brewery, Harbor Town Pub, Eppig Brewing, Wonderland Ocean Pub, Sunshine Company</p>
+                <p class="catline"><span class="category">See</span>: Cabrillo National Monument, Sunset Cliffs</p>
+                <p class="subheading">La Jolla</p>
+                <p class="catline"><span class="category">See</span>: La Jolla Cove (seals), Mount Soledad (views)</p>
+                <p class="catline"><span class="category">Walk</span>: La Jolla Shores, Torrey Pines Nature Reserve</p>
+                <p class="subheading">Del Mar and Solana</p>
+                <p class="catline"><span class="category">Food</span>: Stratford Court Cafe, Bangkok Bay Thai</p>
+                <p class="catline"><span class="category">Drinks</span>: Monarch Ocean Pub, Viewpoint Brewery</p>
+                <p class="catline"><span class="category">Walk</span>: Tide Park Beach</p>
+                <p class="subheading">Coronado</p>
+                <p class="catline"><span class="category">See</span>: Hotel Del</p>
+                <p class="catline"><span class="category">Walk</span>: Coronado Ave / Ocean Blvd</p>
+              </div>
+            </details>
+            <details class="list-item" name="lists">
+              <summary class="list-toggle">Things I'm Curious About</summary>
+              <div class="list-content">
+                <p>Why a pork chop is called a chop</p>
+                <p>Sanctions enforcement and shadow fleet tracking</p>
+                <p>Moby Dick was a real whale</p>
+                <p>The best Prisoner's Dilemma strategy (be nice, forgiving, retaliatory, and clear)</p>
+                <p>The endocrine system</p>
+                <p>Why humans can live in groups of 150+ and other animals typically can't</p>
+                <p>Where the name &quot;Hoosier&quot; came from (nobody knows)</p>
+                <p>Cosmic Microwave Background</p>
+                <p>How the US population nearly quadrupled in the 20th century</p>
+                <p>The Ising Model and critical points</p>
+                <p>Turkish Airlines</p>
+                <p>How backpropagation works</p>
+                <p>The Medici Family</p>
+                <p>The Network State</p>
+                <p>How Europe conquered most of the world</p>
+                <p>Bayesian prediction</p>
+                <p>Photosynthesis as a quantum effect</p>
+                <p>Neutrinos</p>
+                <p>Sleep talking and somniloquy</p>
+                <p>Predictive processing</p>
+                <p>BJ Fogg's work on behavior design</p>
+                <p>Wealth inequality and historical cycles</p>
+                <p>Cybersecurity and AI</p>
+                <p>KFC was franchised when Sanders was 65</p>
+                <p>Mimetic desire</p>
+                <p>Elite overproduction theory</p>
+                <p>The physical economy buildout</p>
+                <p>Why tigers aren't green</p>
+                <p>How the marathon is named for the distance between Marathon and Athens</p>
+                <p>Sports as a form of specialization</p>
+                <p>Hercules-Corona Borealis Great Wall</p>
+                <p>Looking at stocks through the lens of products I actually enjoy using</p>
+                <p>The ad market and why certain ads get chosen</p>
+              </div>
+            </details>
+        </main>
         <footer>
             <p>Thanks for stopping by.</p>
             <p>&copy; 2026 SML</p>
         </footer>
-
-        <script>
-            const lists = [
-                {
-                    title: "Mount Rushmore: Movies",
-                    items: ["Arrival", "Interstellar", "Dazed and Confused", "Good Will Hunting"]
-                },
-                {
-                    title: "Mount Rushmore: Pixar",
-                    items: ["WALL-E", "Incredibles", "Monsters Inc", "Cars"]
-                },
-                {
-                    title: "Mount Rushmore: Sandwiches",
-                    items: ["Turkey club", "Banh mi", "Pulled pork with coleslaw", "Fried chicken"]
-                },
-                {
-                    title: "Mount Rushmore: Old Money Last Names",
-                    items: ["Lightfoot", "Moneypenny", "Poindexter", "Drinkwine"]
-                },
-                {
-                    title: "Favorite Foods",
-                    items: [
-                        "Blueberries (fresh picked)",
-                        "Pineapple",
-                        "Roasted broccoli",
-                        "Banana with peanut butter",
-                        "Rice",
-                        "Pad thai (must be spicy)",
-                        "Tuna avocado sushi roll",
-                        "Fried chicken sandwich (must be spicy)",
-                        "Mexican breakfast",
-                        "Guacamole"
-                    ]
-                },
-                {
-                    title: "Things To Do When You Visit SD",
-                    sections: [
-                        {
-                            heading: "Encinitas",
-                            items: [
-                                "Coffee: Necessity Coffee, Bump, Lofty, Rose Hill Purveyors",
-                                "Breakfast: Le Papagayo, Goodonya, Nectarine Grove",
-                                "Food: Fish 101, Temaki Bar, Seaside Market, Hamburger Hut, Birdseye Kitchen, Corner Pizza",
-                                "Drinks: Duck Foot, Fox Point Farms, Saloon, 1st Street, Roxy, Shanty, Kraken, Leucadian, Sago, Shelter",
-                                "See: Meditation Gardens",
-                                "Walk: Coastal Rail Trail"
-                            ]
-                        },
-                        {
-                            heading: "North Park, South Park, Mission Valley",
-                            items: [
-                                "Food: Sunnyboy Biscuit Co, Grand Ole BBQ, Louisiana Purchase, Buona Forchetta, Bosforo, Tribute Pizza, Finca, Cassette Pizza, Fortunate Son, Dunedin",
-                                "Drinks: Polite Provisions, Pure Project, Fall Brewing, Oddish Wine",
-                                "See: Balboa Park, The Lafayette Hotel"
-                            ]
-                        },
-                        {
-                            heading: "Bay Hill",
-                            items: [
-                                "Food: High Dive, Bay Hill Tavern, Pit Stop Pizza, Siesels Meats and Deli, Bay Park Coffee",
-                                "Drinks: Sidecar, Coronado Brewing"
-                            ]
-                        },
-                        {
-                            heading: "Little Italy & Downtown",
-                            items: [
-                                "Food: Allegro, Morning Glory, Monello, Barbusa, Crack Shack, Nolita Hall, Cocina 35",
-                                "Drinks: Vino Carta, Ballast Point"
-                            ]
-                        },
-                        {
-                            heading: "Pacific Beach & Mission Beach",
-                            items: [
-                                "Food: Nico's Fish Market, Costa Brava, Leilani's Cafe, Harry's Taco Club, Enoteca Adriano",
-                                "Drinks: PB Pub, Maverick's Beach Club, Duck Dive, West End, Tavern, Silver Fox",
-                                "Walk: The strand or the bay (good people watching)"
-                            ]
-                        },
-                        {
-                            heading: "Ocean Beach, Point Loma, Sunset Cliffs",
-                            items: [
-                                "Food: Ikes Love and Sandwiches, OB Noodle House, It's Raw Poke",
-                                "Drinks: OB Brewery, Harbor Town Pub, Eppig Brewing, Wonderland Ocean Pub, Sunshine Company",
-                                "See: Cabrillo National Monument, Sunset Cliffs"
-                            ]
-                        },
-                        {
-                            heading: "La Jolla",
-                            items: [
-                                "See: La Jolla Cove (seals), Mount Soledad (views)",
-                                "Walk: La Jolla Shores, Torrey Pines Nature Reserve"
-                            ]
-                        },
-                        {
-                            heading: "Del Mar and Solana",
-                            items: [
-                                "Food: Stratford Court Cafe, Bangkok Bay Thai",
-                                "Drinks: Monarch Ocean Pub, Viewpoint Brewery",
-                                "Walk: Tide Park Beach"
-                            ]
-                        },
-                        {
-                            heading: "Coronado",
-                            items: [
-                                "See: Hotel Del",
-                                "Walk: Coronado Ave / Ocean Blvd"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Things I'm Curious About",
-                    items: [
-                        "Why a pork chop is called a chop",
-                        "Sanctions enforcement and shadow fleet tracking",
-                        "Moby Dick was a real whale",
-                        "The best Prisoner's Dilemma strategy (be nice, forgiving, retaliatory, and clear)",
-                        "The endocrine system",
-                        "Why humans can live in groups of 150+ and other animals typically can't",
-                        "Where the name \"Hoosier\" came from (nobody knows)",
-                        "Cosmic Microwave Background",
-                        "How the US population nearly quadrupled in the 20th century",
-                        "The Ising Model and critical points",
-                        "Turkish Airlines",
-                        "How backpropagation works",
-                        "The Medici Family",
-                        "The Network State",
-                        "How Europe conquered most of the world",
-                        "Bayesian prediction",
-                        "Photosynthesis as a quantum effect",
-                        "Neutrinos",
-                        "Sleep talking and somniloquy",
-                        "Predictive processing",
-                        "BJ Fogg's work on behavior design",
-                        "Wealth inequality and historical cycles",
-                        "Cybersecurity and AI",
-                        "KFC was franchised when Sanders was 65",
-                        "Mimetic desire",
-                        "Elite overproduction theory",
-                        "The physical economy buildout",
-                        "Why tigers aren't green",
-                        "How the marathon is named for the distance between Marathon and Athens",
-                        "Sports as a form of specialization",
-                        "Hercules-Corona Borealis Great Wall",
-                        "Looking at stocks through the lens of products I actually enjoy using",
-                        "The ad market and why certain ads get chosen"
-                    ]
-                },
-            ];
-
-            function buildLists() {
-                const container = document.getElementById('listsContainer');
-
-                lists.forEach(list => {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'list-item';
-
-                    const toggle = document.createElement('p');
-                    toggle.className = 'list-toggle';
-                    toggle.textContent = list.title;
-
-                    const content = document.createElement('div');
-                    content.className = 'list-content';
-
-                    if (list.sections) {
-                        list.sections.forEach(section => {
-                            const heading = document.createElement('p');
-                            heading.className = 'subheading';
-                            heading.textContent = section.heading;
-                            content.appendChild(heading);
-
-                            section.items.forEach(item => {
-                                const splitIndex = item.indexOf(': ');
-                                const p = document.createElement('p');
-                                p.className = 'catline';
-
-                                if (splitIndex !== -1) {
-                                    const label = item.slice(0, splitIndex);
-                                    const places = item.slice(splitIndex + 2);
-
-                                    const span = document.createElement('span');
-                                    span.className = 'category';
-                                    span.textContent = label;
-
-                                    p.appendChild(span);
-                                    p.appendChild(document.createTextNode(': ' + places));
-                                } else {
-                                    p.textContent = item;
-                                }
-
-                                content.appendChild(p);
-                            });
-                        });
-                    } else {
-                        list.items.forEach(item => {
-                            const p = document.createElement('p');
-                            p.textContent = item;
-                            content.appendChild(p);
-                        });
-                    }
-
-                    toggle.addEventListener('click', () => {
-                        const isOpen = content.classList.contains('open');
-                        document.querySelectorAll('.list-content').forEach(el => el.classList.remove('open'));
-                        if (!isOpen) content.classList.add('open');
-                    });
-
-                    wrapper.appendChild(toggle);
-                    wrapper.appendChild(content);
-                    container.appendChild(wrapper);
-                });
-            }
-
-            buildLists();
-        </script>
     </body>
 </html>
