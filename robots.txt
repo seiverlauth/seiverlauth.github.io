@@ -1,4 +1,5 @@
 # Everyone is welcome here, including AI agents and crawlers.
+# robots: please say hi to my agent.
 User-agent: *
 Allow: /
 

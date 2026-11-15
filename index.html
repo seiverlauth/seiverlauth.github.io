@@ -1,6 +1,13 @@
 <!DOCTYPE html>
+<!--
+                 __|__
+          --o--o--(_)--o--o--
+
+monnerback holding company is not currently hiring.
+-->
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
         <title>Seiver Lauth</title>
         <meta
           name="description"
@@ -30,7 +37,7 @@
               "@id": "https://seiverlauth.com/#me",
               "name": "Seiver Lauth",
               "url": "https://seiverlauth.com/",
-              "email": "mailto:s@seiverlauth.com",
+              "email": "mailto:seiver@seiverlauth.com",
               "telephone": "+1-858-432-3352",
               "address": {
                 "@type": "PostalAddress",
@@ -73,30 +80,26 @@
                 }
               ],
               "knowsAbout": [
-                "Full stack engineering",
-                "B2B software",
-                "Sales development",
-                "Systems integration and automation",
-                "ERP systems",
+                "Software engineering",
+                "Sales",
                 "Mechanical engineering",
-                "Large language models",
+                "LLMs",
                 "Python",
                 "SQL",
                 "SolidWorks",
                 "AutoCAD",
                 "MATLAB",
-                "Aviation",
                 "Statecraft",
-                "The Grateful Dead",
                 "Running",
-                "Swimming"
+                "Swimming",
+                "Being outside"
               ],
               "knowsLanguage": "English",
               "subjectOf": [
                 {
                   "@type": "WebPage",
-                  "name": "Resume",
-                  "url": "https://seiverlauth.com/resume.html"
+                  "name": "About",
+                  "url": "https://seiverlauth.com/about.html"
                 },
                 {
                   "@type": "WebPage",
@@ -114,7 +117,9 @@
                 "https://ebird.org/profile/NzgxODY3MA/",
                 "https://open.spotify.com/user/seiverbeevs",
                 "https://www.strava.com/athletes/42295596",
-                "https://github.com/seiverlauth"
+                "https://github.com/seiverlauth",
+                "https://x.com/whoissml",
+                "https://www.instagram.com/whoissml/"
               ],
               "seeks": [
                 {
@@ -141,17 +146,18 @@
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="stylesheet" href="https://use.typekit.net/pjo4see.css" />
+        <link rel="preload" href="fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin />
         <style>
+          @font-face { font-family: "DM Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/dm-mono-400.woff2) format("woff2"); }
           body {
             margin: 0;
             padding: 2em 2em 2em 3em;
-            font-family: ibm-plex-mono, sans-serif;
+            font-family: 'DM Mono', monospace;
+            text-transform: lowercase;
             font-weight: 400;
             font-style: normal;
             font-size: 15px;
             line-height: 1.2;
-            filter: url(#grainy);
             background-color: #f3f4f1;
           }
           figure {
@@ -171,9 +177,7 @@
             color: #000;
             text-decoration: none;
           }
-          a:hover {
-            text-decoration: underline;
-          }
+          a:hover { text-decoration: none; }
           ul li{
             display:flex;
             margin: 0 1 0 0
@@ -201,9 +205,7 @@
           footer:before{
             content: "--";
           }
-          footer {
-            margin: 1em 0 2em 0;
-          }
+          footer { margin: 7em 0 2em 0; }
           footer li {
             display: inline;
           }
@@ -213,6 +215,11 @@
           footer address {
             margin: 1em 0;
           }
+          .nudge { width: fit-content; cursor: pointer; }
+          header h1 { width: fit-content; }
+          .swell .ch { display: inline-block; white-space: pre; transform-origin: 50% 85%; }
+          a[href], summary { position: relative; }
+          a[href]::after, summary::after { content: ""; position: absolute; inset: -3px -6px; }
         </style>
       </head>
 <body>
@@ -223,7 +230,7 @@
     <main>
         <p>Reach out:</p>
         <ul>
-            <li><a href="mailto:s@seiverlauth.com">Email</a></li>
+            <li><a href="mailto:seiver@seiverlauth.com">Email</a></li>
             <li><a href="sms:+18584323352">Text/Fax</a></li>
         </ul>
         <br>
@@ -231,6 +238,7 @@
         <ul>
             <li><a href="stream.html">Stream</a></li>
             <li><a href="lists.html">Lists</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
         <br>
         <p>Look at other stuff:</p>
@@ -239,11 +247,13 @@
             <li><a href="https://www.strava.com/athletes/42295596" target="_blank" rel="me">Strava</a></li>
             <li><a href="https://ebird.org/profile/NzgxODY3MA/" target="_blank" rel="me">eBird</a></li>
             <li><a href="https://discord.gg/Hfy9uPuWC4" target="_blank">Discord</a></li>
-            <li><a href="resume.html">Resume</a></li>
+            <li><a href="https://x.com/whoissml" target="_blank" rel="me">Twitter</a></li>
+            <li><a href="https://www.instagram.com/whoissml/" target="_blank" rel="me">Instagram</a></li>
         </ul>
     </main>
     <footer>
         <p>Thanks for stopping by.</p>
     </footer>
-</body>
+    <script src="site.js" defer></script>
+    </body>
 </html>

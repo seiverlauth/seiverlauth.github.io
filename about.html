@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>About</title>
+        <meta name="description" content="About" />
+        <link rel="canonical" href="https://seiverlauth.com/about.html" />
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://seiverlauth.com/about.html",
+          "name": "About",
+          "about": { "@id": "https://seiverlauth.com/#me" },
+          "isPartOf": { "@id": "https://seiverlauth.com/" }
+        }
+        </script>
+        <link rel="icon" href="fav.png" type="image/png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="preload" href="fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+        <style>
+          @font-face { font-family: "DM Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/dm-mono-400.woff2) format("woff2"); }
+          body {
+            margin: 0;
+            padding: 2em 2em 2em 3em;
+            font-family: 'DM Mono', monospace;
+            text-transform: lowercase;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            line-height: 1.2;
+            background-color: #f3f4f1;
+          }
+          h1,h2,h3,p { padding: 0; margin: 0; font-size: 1em; font-weight: normal; }
+          h1 { margin: 0 0 1em 0; }
+          a { color: #000; text-decoration: none; }
+          a:hover { text-decoration: none; }
+          header, main, footer { width: 34em; max-width: 100%; }
+          header:after, main:after { content: ""; display: block; margin: 1em 0; }
+          footer:before { content: "--"; }
+          footer { margin: 7em 0 2em 0; }
+
+          section { margin: 0 0 2em 0; line-height: 1.5; }
+          section > h2 { text-decoration: underline; margin-bottom: 0.6em; }
+          h3 { margin: 1em 0 0.3em 0; }
+          ul { margin: 0; padding: 0; list-style: none; }
+          li { display: flex; margin: 0 0 0.4em 0; }
+          li:before { content: "⮑"; margin-right: .5em; flex-shrink: 0; }
+          .role { margin: 0 0 0.6em 0; }
+          .meta { color: #555; }
+          ul.plain li:before { content: none; }
+          .nudge { width: fit-content; cursor: pointer; }
+          .swell .ch { display: inline-block; white-space: pre; transform-origin: 50% 85%; }
+          a[href], summary { position: relative; }
+          a[href]::after, summary::after { content: ""; position: absolute; inset: -3px -6px; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a> &gt; <span>About</span>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Profile</h2>
+                <p>Demonstrated success in viewing problems through both technical and human lenses. Mechanical engineering background provides the ability to see systems in their component parts without losing sight of their purpose. Intrinsic curiosity enables effective resource management, drawing from historical patterns, and maintaining consistency in execution.</p>
+            </section>
+
+            <section>
+                <h2>Roles</h2>
+                <div class="role">
+                    <p>Full Stack Engineer, Intelligems</p>
+                    <p class="meta">San Diego, CA · July 2025 – Present</p>
+                </div>
+                <div class="role">
+                    <p>Founding Sales Development Representative, Alloy Automation</p>
+                    <p class="meta">San Diego, CA · February 2024 – May 2025</p>
+                </div>
+                <div class="role">
+                    <p>Sales Development Representative, Workato</p>
+                    <p class="meta">San Diego, CA · April 2022 – February 2024</p>
+                </div>
+                <div class="role">
+                    <p>Technical Product Consultant, NuVerge</p>
+                    <p class="meta">Denver, CO · May 2021 – April 2022</p>
+                </div>
+                <div class="role">
+                    <p>Senior Capstone Project, Boeing</p>
+                    <p class="meta">Spokane, WA · September 2019 – May 2020</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <p>Gonzaga University</p>
+                <p class="meta">Spokane, WA · August 2016 – May 2020</p>
+                <ul class="plain" style="margin-top: 0.5em;">
+                    <li>Bachelor of Science in Mechanical Engineering, GPA 3.6, Cum Laude</li>
+                    <li>National Society of Collegiate Scholars, Member; Dean's List and President's List</li>
+                    <li>Study Abroad Engineering Program, Spring 2018, Florence, Italy</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>Thanks for stopping by.</p>
+        </footer>
+        <script src="site.js" defer></script>
+    </body>
+</html>
