@@ -53,14 +53,10 @@
           h3 { margin: 1em 0 0.3em 0; }
           ul { margin: 0; padding: 0; list-style: none; }
           li { display: flex; margin: 0 0 0.4em 0; }
-          li:before { content: "⮑"; margin-right: .5em; flex-shrink: 0; }
-          .role { margin: 0 0 0.6em 0; }
-          .steps { margin: 0.9em 0 1.2em 0.2em; border-left: 1px solid #c8c9c5; padding-left: 1.2em; }
-          .steps li { display: flex; flex-direction: column; margin: 0 0 0.9em 0; }
-          .steps li:last-child { margin-bottom: 0; }
-          .steps li:before { content: none; }
-          .meta { color: #555; }
-          ul.plain li:before { content: none; }
+          .meta { color: #000; }
+          .entry { margin: 0 0 1.4em 0; }
+          .entry p { line-height: 1.5; }
+          .entry p + p { margin-left: 1.1em; }
           .nudge { width: fit-content; cursor: pointer; }
           .swell .word { white-space: nowrap; }
           .swell .ch { display: inline-block; white-space: pre; transform-origin: 50% 85%; }
@@ -75,41 +71,36 @@
             </nav>
         </header>
         <main>
-
             <section>
                 <h2>Roles</h2>
-                <div class="role">
+                <div class="entry">
                     <p>Intelligems</p>
-                    <p class="meta">San Diego, CA · July 2025 – Present</p>
-                    <ul class="steps">
-                        <li><span>Full Stack Engineer</span><span class="meta">May 2026 – Present</span></li>
-                        <li><span>Solutions Engineer</span><span class="meta">February 2026 – May 2026</span></li>
-                        <li><span>Customer Support</span><span class="meta">July 2025 – February 2026</span></li>
-                    </ul>
+                    <p>Full Stack Engineer <span class="meta">· May 2026 – Present</span></p>
+                    <p>Solutions Engineer <span class="meta">· Feb 2026 – May 2026</span></p>
+                    <p>Customer Support <span class="meta">· Jul 2025 – Feb 2026</span></p>
                 </div>
-                <div class="role">
-                    <p>Founding Sales Development Representative, Alloy Automation</p>
-                    <p class="meta">San Diego, CA · February 2024 – May 2025</p>
+                <div class="entry">
+                    <p>Alloy Automation</p>
+                    <p>Founding Sales Development Representative <span class="meta">· Feb 2024 – May 2025</span></p>
                 </div>
-                <div class="role">
-                    <p>Sales Development Representative, Workato</p>
-                    <p class="meta">San Diego, CA · April 2022 – February 2024</p>
+                <div class="entry">
+                    <p>Workato</p>
+                    <p>Sales Development Representative <span class="meta">· Apr 2022 – Feb 2024</span></p>
                 </div>
-                <div class="role">
-                    <p>Technical Product Consultant, NuVerge</p>
-                    <p class="meta">Denver, CO · May 2021 – April 2022</p>
+                <div class="entry">
+                    <p>NuVerge</p>
+                    <p>Technical Product Consultant <span class="meta">· May 2021 – Apr 2022</span></p>
                 </div>
             </section>
 
             <section>
                 <h2>Education</h2>
-                <p>Gonzaga University</p>
-                <p class="meta">Spokane, WA</p>
-                <ul class="plain" style="margin-top: 0.5em;">
-                    <li>Bachelor of Science in Mechanical Engineering, GPA 3.6, Cum Laude</li>
-                    <li>National Society of Collegiate Scholars, Member; Dean's List and President's List</li>
-                    <li>Study Abroad Engineering Program, Spring 2018, Florence, Italy</li>
-                </ul>
+                <div class="entry">
+                    <p>Gonzaga University</p>
+                    <p>Bachelor of Science in Mechanical Engineering, Cum Laude</p>
+                    <p class="meta">Dean's List, President's List, National Society of Collegiate Scholars</p>
+                    <p class="meta">Including a semester in Florence, Italy</p>
+                </div>
             </section>
         </main>
         <footer>

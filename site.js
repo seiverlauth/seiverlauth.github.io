@@ -177,6 +177,34 @@
   });
 })();
 
+// No lonely last words: if a line would wrap just one word onto the next line,
+// keep it on one line instead (only when it still fits on screen).
+(() => {
+  const els = [...document.querySelectorAll('main p, main li, main summary')]
+    .filter((el) => !el.closest('.mood-stream') && el.textContent.trim().includes(' '));
+  const fix = () => {
+    for (const el of els) {
+      el.style.whiteSpace = '';
+      const cs = getComputedStyle(el);
+      const lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.3;
+      if (el.getBoundingClientRect().height < lh * 1.6) continue;   // already one line
+      const r = el.getBoundingClientRect();
+      el.style.whiteSpace = 'nowrap';
+      const full = el.scrollWidth;
+      const words = el.textContent.trim().split(/\s+/);
+      const last = words[words.length - 1].length + 1;
+      const charW = full / el.textContent.trim().length;
+      const over = full - r.width;
+      const fitsScreen = r.left + full <= innerWidth - 16;
+      if (!(over > 0 && over <= last * charW + 2 && fitsScreen)) el.style.whiteSpace = '';
+    }
+  };
+  addEventListener('load', fix);
+  addEventListener('resize', fix);
+  document.addEventListener('toggle', fix, true);
+  fix();
+})();
+
 // Letters that swell under the cursor.
 // When the cursor is on a link or list title, the letters nearest it grow slightly,
 // and they ease back slowly after it leaves, so the cursor leaves a soft trail.
