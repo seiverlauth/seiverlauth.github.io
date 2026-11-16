@@ -86,7 +86,7 @@
           }
           main { width: auto; }
           .mood-stream {
-            column-width: 220px;
+            column-width: var(--col, 220px);
             column-gap: 14px;
             max-width: 1400px;
           }
@@ -115,6 +115,17 @@
             transform-origin: 50% 50%;
           }
           a.slinky.to-top { position: fixed; }
+          header#top { display: flex; align-items: center; justify-content: space-between; gap: 2em; width: auto; max-width: 1400px; margin-bottom: 1.5em; }
+          header#top::after { display: none; }
+          .sizer { display: flex; align-items: center; gap: 4px; }
+          .sizer button { all: unset; cursor: pointer; padding: 5px; display: grid; place-items: center; }
+          .sizer button::before { content: ""; display: block; border-radius: 50%; border: 1px solid #000; background: transparent; }
+          .sizer button[data-size="160"]::before { width: 5px; height: 5px; }
+          .sizer button[data-size="240"]::before { width: 8px; height: 8px; }
+          .sizer button[data-size="420"]::before { width: 11px; height: 11px; }
+          .sizer button[aria-pressed="true"]::before { background: #000; }
+          .sizer button:focus-visible { outline: 1px solid #000; outline-offset: 1px; border-radius: 50%; }
+          @media (max-width: 480px) { .sizer { display: none; } }
         </style>
       </head>
       <body>
@@ -122,6 +133,11 @@
             <nav class="breadcrumb-nav">
             <a href="index.html">Home</a> &gt; <span>Stream</span>
         </nav>
+            <div class="sizer" role="group" aria-label="image size">
+                <button type="button" data-size="160" aria-label="small images"></button>
+                <button type="button" data-size="240" aria-label="medium images"></button>
+                <button type="button" data-size="420" aria-label="large images"></button>
+            </div>
         </header>
         <main>
           <div class="mood-stream" id="moodStream">

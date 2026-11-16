@@ -108,6 +108,24 @@
   el.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: still ? 'auto' : 'smooth' }); });
 })();
 
+// Stream: small / medium / large circles to size the images. Remembers your choice on this device.
+(() => {
+  const buttons = [...document.querySelectorAll('.sizer button')];
+  const grid = document.querySelector('.mood-stream');
+  if (!buttons.length || !grid) return;
+  const pick = (size) => {
+    grid.style.setProperty('--col', size + 'px');
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.size === size)));
+  };
+  let start = '240';
+  try { const saved = localStorage.getItem('stream-size'); if (buttons.some((b) => b.dataset.size === saved)) start = saved; } catch {}
+  pick(start);
+  buttons.forEach((b) => b.addEventListener('click', () => {
+    pick(b.dataset.size);
+    try { localStorage.setItem('stream-size', b.dataset.size); } catch {}
+  }));
+})();
+
 // Letters that swell under the cursor.
 // When the cursor is on a link or list title, the letters nearest it grow slightly,
 // and they ease back slowly after it leaves, so the cursor leaves a soft trail.
