@@ -113,8 +113,12 @@
   const buttons = [...document.querySelectorAll('.sizer button')];
   const grid = document.querySelector('.mood-stream');
   if (!buttons.length || !grid) return;
+  const imgs = [...grid.querySelectorAll('img[srcset]')];
   const pick = (size) => {
     grid.style.setProperty('--col', size + 'px');
+    grid.dataset.size = size;
+    // tell the browser how wide images now show, so large gets the sharp versions
+    imgs.forEach((im) => { im.sizes = Math.round(Number(size) * 1.4) + 'px'; });
     buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.size === size)));
   };
   let start = '240';
@@ -124,6 +128,50 @@
     pick(b.dataset.size);
     try { localStorage.setItem('stream-size', b.dataset.size); } catch {}
   }));
+})();
+
+// Stream: click an image to see it on its own. Click anywhere or press esc to close,
+// arrow keys to move between images.
+(() => {
+  const grid = document.querySelector('.mood-stream');
+  if (!grid) return;
+  const box = document.createElement('div');
+  box.className = 'iso';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.hidden = true;
+  box.innerHTML = '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(box);
+  const big = box.querySelector('img'), cap = box.querySelector('figcaption');
+  let current = null;
+  const sharp = (im) => {
+    const m = (im.getAttribute('srcset') || '').match(/(\S+@2x\.webp)/);
+    return m ? m[1] : im.getAttribute('src');
+  };
+  const show = (im) => {
+    current = im;
+    big.src = im.getAttribute('src');          // the small one is already loaded, show it instantly
+    const hi = sharp(im);
+    if (hi !== big.src) { const pre = new Image(); pre.onload = () => { if (current === im) big.src = hi; }; pre.src = hi; }
+    big.alt = im.alt;
+    cap.textContent = im.alt;
+    box.hidden = false;
+    document.documentElement.classList.add('iso-open');
+  };
+  const close = () => { box.hidden = true; current = null; document.documentElement.classList.remove('iso-open'); };
+  const step = (d) => {
+    const all = [...grid.querySelectorAll('img')];
+    const i = all.indexOf(current);
+    show(all[(i + d + all.length) % all.length]);
+  };
+  grid.addEventListener('click', (e) => { const im = e.target.closest('img'); if (im) show(im); });
+  box.addEventListener('click', close);
+  addEventListener('keydown', (e) => {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') step(1);
+    else if (e.key === 'ArrowLeft') step(-1);
+  });
 })();
 
 // Letters that swell under the cursor.

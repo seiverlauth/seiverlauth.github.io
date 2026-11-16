@@ -126,6 +126,14 @@
           .sizer button[aria-pressed="true"]::before { background: #000; }
           .sizer button:focus-visible { outline: 1px solid #000; outline-offset: 1px; border-radius: 50%; }
           @media (max-width: 480px) { .sizer { display: none; } }
+          .mood-stream img { cursor: zoom-in; transition: opacity 200ms ease; }
+          .mood-stream img:hover { opacity: 0.85; }
+          .iso { position: fixed; inset: 0; z-index: 10; background: rgb(243 244 241 / 0.97); display: grid; place-items: center; padding: 3em 2em; cursor: zoom-out; }
+          .iso[hidden] { display: none; }
+          .iso figure { margin: 0; max-width: min(1200px, 100%); display: flex; flex-direction: column; align-items: flex-start; gap: 0.9em; }
+          .iso img { display: block; max-width: 100%; max-height: calc(100vh - 9em); width: auto; height: auto; border-radius: 6px; }
+          .iso figcaption { max-width: 60ch; line-height: 1.4; }
+          .iso-open { overflow: hidden; }
         </style>
       </head>
       <body>
@@ -141,201 +149,201 @@
         </header>
         <main>
           <div class="mood-stream" id="moodStream">
-              <img src="img/yorker.webp" width="600" height="815" alt="Vintage New Yorker cover of commuters reading newspapers on a train platform" loading="lazy" decoding="async">
-              <img src="img/showers.webp" width="600" height="600" alt="Shower room tiled floor to ceiling in dark green" loading="lazy" decoding="async">
-              <img src="img/blue.webp" width="600" height="375" alt="Dense city of apartment blocks under a bright blue sky" loading="lazy" decoding="async">
+              <img src="img/yorker.webp" srcset="img/yorker.webp 600w, img/yorker@2x.webp 896w" sizes="360px" width="600" height="815" alt="Vintage New Yorker cover of commuters reading newspapers on a train platform" loading="lazy" decoding="async">
+              <img src="img/showers.webp" srcset="img/showers.webp 600w, img/showers@2x.webp 830w" sizes="360px" width="600" height="600" alt="Shower room tiled floor to ceiling in dark green" loading="lazy" decoding="async">
+              <img src="img/blue.webp" srcset="img/blue.webp 600w, img/blue@2x.webp 1200w" sizes="360px" width="600" height="375" alt="Dense city of apartment blocks under a bright blue sky" loading="lazy" decoding="async">
               <img src="img/partners.webp" width="582" height="400" alt="Stamped sign showing a figure crossed out next to two figures together" loading="lazy" decoding="async">
-              <img src="img/greenporche.webp" width="600" height="600" alt="Dark green vintage Porsche 911 seen from above" loading="lazy" decoding="async">
-              <img src="img/understand.webp" width="600" height="748" alt="Illustration of a man on a beach chair with a laptop, captioned &quot;It&#x27;s okay to live a life others don&#x27;t understand&quot;" loading="lazy" decoding="async">
-              <img src="img/corridor.webp" width="600" height="800" alt="Sunlit apartment hallway full of art, plants and a kitchen at the end" loading="lazy" decoding="async">
-              <img src="img/tomford.webp" width="600" height="883" alt="Handwritten Tom Ford note on Chateau Marmont stationery about what matters at the end of life" loading="lazy" decoding="async">
-              <img src="img/two.webp" width="600" height="945" alt="Burger and fries with a caption: two is one of the smallest numbers, you&#x27;ll be fine" loading="lazy" decoding="async">
-              <img src="img/squaremobius.webp" width="600" height="566" alt="Green impossible square shape surrounded by joking captions" loading="lazy" decoding="async">
+              <img src="img/greenporche.webp" srcset="img/greenporche.webp 600w, img/greenporche@2x.webp 768w" sizes="360px" width="600" height="600" alt="Dark green vintage Porsche 911 seen from above" loading="lazy" decoding="async">
+              <img src="img/understand.webp" srcset="img/understand.webp 600w, img/understand@2x.webp 1200w" sizes="360px" width="600" height="748" alt="Illustration of a man on a beach chair with a laptop, captioned &quot;It&#x27;s okay to live a life others don&#x27;t understand&quot;" loading="lazy" decoding="async">
+              <img src="img/corridor.webp" srcset="img/corridor.webp 600w, img/corridor@2x.webp 736w" sizes="360px" width="600" height="800" alt="Sunlit apartment hallway full of art, plants and a kitchen at the end" loading="lazy" decoding="async">
+              <img src="img/tomford.webp" srcset="img/tomford.webp 600w, img/tomford@2x.webp 1000w" sizes="360px" width="600" height="883" alt="Handwritten Tom Ford note on Chateau Marmont stationery about what matters at the end of life" loading="lazy" decoding="async">
+              <img src="img/two.webp" srcset="img/two.webp 600w, img/two@2x.webp 1179w" sizes="360px" width="600" height="945" alt="Burger and fries with a caption: two is one of the smallest numbers, you&#x27;ll be fine" loading="lazy" decoding="async">
+              <img src="img/squaremobius.webp" srcset="img/squaremobius.webp 600w, img/squaremobius@2x.webp 1080w" sizes="360px" width="600" height="566" alt="Green impossible square shape surrounded by joking captions" loading="lazy" decoding="async">
               <img src="img/nabisco.webp" width="513" height="911" alt="Golf caddie walking away carrying a red and white bag" loading="lazy" decoding="async">
-              <img src="img/tea.webp" width="600" height="685" alt="Poster: &quot;How to Enjoy Your Cup of Tea While the World Falls Apart Around You&quot;" loading="lazy" decoding="async">
-              <img src="img/swim.webp" width="600" height="749" alt="Blue ink drawing of a swimmer doing freestyle" loading="lazy" decoding="async">
-              <img src="img/form.webp" width="600" height="440" alt="Pink sun over ocean waves, subtitled &quot;Nothing is missing, look around you, give it form&quot;" loading="lazy" decoding="async">
-              <img src="img/stamps.webp" width="600" height="615" alt="Passport stamps with airplane icons from Japan, April 2000" loading="lazy" decoding="async">
-              <img src="img/tennis.webp" width="600" height="907" alt="Tennis ball lying on a court beside a tree&#x27;s shadow" loading="lazy" decoding="async">
-              <img src="img/benzcup.webp" width="600" height="874" alt="White vintage Mercedes-Benz Cup tennis t-shirt" loading="lazy" decoding="async">
-              <img src="img/bedroom.webp" width="600" height="742" alt="Quiet white bedroom with a lamp and dresser by the window" loading="lazy" decoding="async">
-              <img src="img/tony.webp" width="600" height="423" alt="TV still of a man in an armchair complaining that self-knowledge got him nowhere" loading="lazy" decoding="async">
-              <img src="img/lemons.webp" width="600" height="589" alt="Cartoon of someone making an enormous amount of lemonade from lemons" loading="lazy" decoding="async">
-              <img src="img/loft.webp" width="600" height="718" alt="Warm loft apartment with a staircase, wood beams and green sofas" loading="lazy" decoding="async">
-              <img src="img/mymind.webp" width="600" height="886" alt="Orange poster: &quot;Create the things you wish existed&quot;" loading="lazy" decoding="async">
-              <img src="img/think.webp" width="600" height="644" alt="Comic: an adult realizes they can do anything, then can&#x27;t decide what they want" loading="lazy" decoding="async">
-              <img src="img/surreal.webp" width="600" height="604" alt="Drawing of a giant phone lying on a bed with a figure sleeping under it" loading="lazy" decoding="async">
-              <img src="img/happiness.webp" width="600" height="600" alt="Comic of a man and an owl on a bench: happiness is elusive because you look for it in the future" loading="lazy" decoding="async">
-              <img src="img/budda.webp" width="600" height="750" alt="Pixelated green Buddha in a desert: everything wants you when you want nothing" loading="lazy" decoding="async">
-              <img src="img/time.webp" width="600" height="790" alt="Runner passing through rings: time moves through us, or we move through it" loading="lazy" decoding="async">
-              <img src="img/depression.webp" width="600" height="338" alt="Cartoon dog in bed, joking that you can&#x27;t buy depression, you have to earn it" loading="lazy" decoding="async">
-              <img src="img/watch.webp" width="600" height="750" alt="Gold Patek Philippe watch with an engraving dated 1980" loading="lazy" decoding="async">
-              <img src="img/point.webp" width="600" height="786" alt="Roland Garros 1984 poster of a red clay court" loading="lazy" decoding="async">
+              <img src="img/tea.webp" srcset="img/tea.webp 600w, img/tea@2x.webp 736w" sizes="360px" width="600" height="685" alt="Poster: &quot;How to Enjoy Your Cup of Tea While the World Falls Apart Around You&quot;" loading="lazy" decoding="async">
+              <img src="img/swim.webp" srcset="img/swim.webp 600w, img/swim@2x.webp 1200w" sizes="360px" width="600" height="749" alt="Blue ink drawing of a swimmer doing freestyle" loading="lazy" decoding="async">
+              <img src="img/form.webp" srcset="img/form.webp 600w, img/form@2x.webp 1200w" sizes="360px" width="600" height="440" alt="Pink sun over ocean waves, subtitled &quot;Nothing is missing, look around you, give it form&quot;" loading="lazy" decoding="async">
+              <img src="img/stamps.webp" srcset="img/stamps.webp 600w, img/stamps@2x.webp 1200w" sizes="360px" width="600" height="615" alt="Passport stamps with airplane icons from Japan, April 2000" loading="lazy" decoding="async">
+              <img src="img/tennis.webp" srcset="img/tennis.webp 600w, img/tennis@2x.webp 1200w" sizes="360px" width="600" height="907" alt="Tennis ball lying on a court beside a tree&#x27;s shadow" loading="lazy" decoding="async">
+              <img src="img/benzcup.webp" srcset="img/benzcup.webp 600w, img/benzcup@2x.webp 1200w" sizes="360px" width="600" height="874" alt="White vintage Mercedes-Benz Cup tennis t-shirt" loading="lazy" decoding="async">
+              <img src="img/bedroom.webp" srcset="img/bedroom.webp 600w, img/bedroom@2x.webp 1200w" sizes="360px" width="600" height="742" alt="Quiet white bedroom with a lamp and dresser by the window" loading="lazy" decoding="async">
+              <img src="img/tony.webp" srcset="img/tony.webp 600w, img/tony@2x.webp 1200w" sizes="360px" width="600" height="423" alt="TV still of a man in an armchair complaining that self-knowledge got him nowhere" loading="lazy" decoding="async">
+              <img src="img/lemons.webp" srcset="img/lemons.webp 600w, img/lemons@2x.webp 1200w" sizes="360px" width="600" height="589" alt="Cartoon of someone making an enormous amount of lemonade from lemons" loading="lazy" decoding="async">
+              <img src="img/loft.webp" srcset="img/loft.webp 600w, img/loft@2x.webp 1200w" sizes="360px" width="600" height="718" alt="Warm loft apartment with a staircase, wood beams and green sofas" loading="lazy" decoding="async">
+              <img src="img/mymind.webp" srcset="img/mymind.webp 600w, img/mymind@2x.webp 1200w" sizes="360px" width="600" height="886" alt="Orange poster: &quot;Create the things you wish existed&quot;" loading="lazy" decoding="async">
+              <img src="img/think.webp" srcset="img/think.webp 600w, img/think@2x.webp 1200w" sizes="360px" width="600" height="644" alt="Comic: an adult realizes they can do anything, then can&#x27;t decide what they want" loading="lazy" decoding="async">
+              <img src="img/surreal.webp" srcset="img/surreal.webp 600w, img/surreal@2x.webp 1024w" sizes="360px" width="600" height="604" alt="Drawing of a giant phone lying on a bed with a figure sleeping under it" loading="lazy" decoding="async">
+              <img src="img/happiness.webp" srcset="img/happiness.webp 600w, img/happiness@2x.webp 1024w" sizes="360px" width="600" height="600" alt="Comic of a man and an owl on a bench: happiness is elusive because you look for it in the future" loading="lazy" decoding="async">
+              <img src="img/budda.webp" srcset="img/budda.webp 600w, img/budda@2x.webp 1024w" sizes="360px" width="600" height="750" alt="Pixelated green Buddha in a desert: everything wants you when you want nothing" loading="lazy" decoding="async">
+              <img src="img/time.webp" srcset="img/time.webp 600w, img/time@2x.webp 730w" sizes="360px" width="600" height="790" alt="Runner passing through rings: time moves through us, or we move through it" loading="lazy" decoding="async">
+              <img src="img/depression.webp" srcset="img/depression.webp 600w, img/depression@2x.webp 960w" sizes="360px" width="600" height="338" alt="Cartoon dog in bed, joking that you can&#x27;t buy depression, you have to earn it" loading="lazy" decoding="async">
+              <img src="img/watch.webp" srcset="img/watch.webp 600w, img/watch@2x.webp 1024w" sizes="360px" width="600" height="750" alt="Gold Patek Philippe watch with an engraving dated 1980" loading="lazy" decoding="async">
+              <img src="img/point.webp" srcset="img/point.webp 600w, img/point@2x.webp 1024w" sizes="360px" width="600" height="786" alt="Roland Garros 1984 poster of a red clay court" loading="lazy" decoding="async">
               <img src="img/openmind.webp" width="570" height="574" alt="Mustard poster: open doors, clear minds, clear space, follow bliss" loading="lazy" decoding="async">
-              <img src="img/beauty.webp" width="600" height="449" alt="Black and white film still: everything is beautiful if you take an interest" loading="lazy" decoding="async">
+              <img src="img/beauty.webp" srcset="img/beauty.webp 600w, img/beauty@2x.webp 749w" sizes="360px" width="600" height="449" alt="Black and white film still: everything is beautiful if you take an interest" loading="lazy" decoding="async">
               <img src="img/self.webp" width="540" height="613" alt="Blurred neon faces: you never meet the same person twice" loading="lazy" decoding="async">
-              <img src="img/progress.webp" width="600" height="618" alt="Diagram of progress cycling between experience, theory and systems over time" loading="lazy" decoding="async">
-              <img src="img/flooded.webp" width="600" height="750" alt="Flooded Mercedes dealership with cars underwater" loading="lazy" decoding="async">
-              <img src="img/afterlife.webp" width="600" height="571" alt="Short text joke about entering the afterlife and recovering an enlightenment code" loading="lazy" decoding="async">
-              <img src="img/motivation.webp" width="600" height="600" alt="Two film stills of an old man making tea: it&#x27;s boring to do nothing" loading="lazy" decoding="async">
-              <img src="img/birds.webp" width="600" height="750" alt="Two razorbills touching beaks on a rock" loading="lazy" decoding="async">
-              <img src="img/jamal.webp" width="600" height="754" alt="Hands reaching for a basketball: Jamal Murray made a shot" loading="lazy" decoding="async">
-              <img src="img/waves.webp" width="600" height="721" alt="Aerial view of long blue ocean swells reaching a beach" loading="lazy" decoding="async">
-              <img src="img/comic.webp" width="600" height="656" alt="Orange hand-drawn comic: when I think of you, can you feel it?" loading="lazy" decoding="async">
-              <img src="img/downtown.webp" width="600" height="800" alt="Brownstone street lined with wisteria under a blue sky" loading="lazy" decoding="async">
-              <img src="img/spectrum.webp" width="600" height="592" alt="Swirling purple and blue marbled paint" loading="lazy" decoding="async">
-              <img src="img/colorwheel.webp" width="600" height="514" alt="Tiny people arranged in a circle forming a color wheel" loading="lazy" decoding="async">
-              <img src="img/court.webp" width="600" height="701" alt="Clay tennis court under a curved wooden dome roof" loading="lazy" decoding="async">
-              <img src="img/process.webp" width="600" height="614" alt="List of ten rules about the creative process and enjoying the work" loading="lazy" decoding="async">
-              <img src="img/desk.webp" width="600" height="732" alt="Cozy desk crowded with plants and books by a window" loading="lazy" decoding="async">
-              <img src="img/perplexity.webp" width="600" height="800" alt="Person reading a book under stars: there&#x27;s always more to learn" loading="lazy" decoding="async">
-              <img src="img/trees.webp" width="600" height="750" alt="Tall trees growing up through a skylight in a white room" loading="lazy" decoding="async">
-              <img src="img/socrates.webp" width="600" height="639" alt="Ten rules for living, from facing your fears to living your morality in private" loading="lazy" decoding="async">
-              <img src="img/aura.webp" width="600" height="514" alt="Two figures in wireframe energy fields: I hate texting, can we merge auric fields?" loading="lazy" decoding="async">
-              <img src="img/expand.webp" width="600" height="600" alt="Collage of a brain diagram with soldiers climbing a ladder" loading="lazy" decoding="async">
-              <img src="img/monkeys.webp" width="600" height="400" alt="Two workers hanging a large painting of parliament filled with chimpanzees" loading="lazy" decoding="async">
-              <img src="img/tweet.webp" width="600" height="587" alt="Billboard of a tweet: your first anything will be bad, so put your ego aside and start" loading="lazy" decoding="async">
-              <img src="img/room.webp" width="600" height="1066" alt="Eclectic living room packed with books, rugs and warm light" loading="lazy" decoding="async">
-              <img src="img/sea.webp" width="600" height="600" alt="Globe on black: no division between continents in the digital, only the sea is free" loading="lazy" decoding="async">
-              <img src="img/nostalgia.webp" width="600" height="1133" alt="Chart showing nostalgia peaks at a certain age across categories" loading="lazy" decoding="async">
-              <img src="img/lockheed.webp" width="600" height="337" alt="Lockheed Martin logo with letters missing so it reads &quot;Lock ed In&quot;" loading="lazy" decoding="async">
-              <img src="img/bed.webp" width="600" height="747" alt="Minimal bedroom with a low bed, bookshelves and sheer curtains" loading="lazy" decoding="async">
-              <img src="img/rocks.webp" width="600" height="749" alt="Pile of colorful sea glass" loading="lazy" decoding="async">
-              <img src="img/wall.webp" width="600" height="722" alt="Narrow building with a dark tiled facade on a European street" loading="lazy" decoding="async">
-              <img src="img/keys.webp" width="600" height="600" alt="Close-up of a white computer keyboard" loading="lazy" decoding="async">
-              <img src="img/porche.webp" width="600" height="623" alt="Cream Porsche 911 on a tree-lined road" loading="lazy" decoding="async">
-              <img src="img/skater.webp" width="600" height="748" alt="Line drawing of a figure on a skateboard" loading="lazy" decoding="async">
-              <img src="img/office.webp" width="600" height="800" alt="Clean home office with a desk, computer and a dog portrait on the wall" loading="lazy" decoding="async">
-              <img src="img/gh.webp" width="600" height="600" alt="Lighthouse at the end of a pier at sunset" loading="lazy" decoding="async">
-              <img src="img/tiger.webp" width="600" height="750" alt="Golfer in a green jacket eating at a dinner table" loading="lazy" decoding="async">
-              <img src="img/thugtravis.webp" width="600" height="654" alt="Man in a sweater and white sneakers swinging a golf club near sports cars" loading="lazy" decoding="async">
-              <img src="img/certainty.webp" width="600" height="680" alt="Painting of a bird and a boy: you must learn to proceed without certainty" loading="lazy" decoding="async">
-              <img src="img/mansion.webp" width="600" height="400" alt="Aerial view of a mansion on a turquoise Caribbean coast" loading="lazy" decoding="async">
-              <img src="img/lebron.webp" width="600" height="400" alt="Basketball player mid-dunk in a packed arena" loading="lazy" decoding="async">
-              <img src="img/cloudtree.webp" width="600" height="888" alt="Tree branch that looks like it is giving off a cloud against a blue sky" loading="lazy" decoding="async">
-              <img src="img/beingmaking.webp" width="600" height="260" alt="Short passage: being is making, not only large things but an afternoon or a meal" loading="lazy" decoding="async">
-              <img src="img/aidogs.webp" width="600" height="600" alt="Grid of loose line drawings of dogs" loading="lazy" decoding="async">
-              <img src="img/libraryposter.webp" width="600" height="804" alt="Library poster: a child reading by firelight in a dark forest" loading="lazy" decoding="async">
-              <img src="img/foggyporche.webp" width="600" height="748" alt="Lone gas station in heavy fog" loading="lazy" decoding="async">
-              <img src="img/circlesnow.webp" width="600" height="373" alt="Doodle of a figure walking in circles: I guess we doin circles now" loading="lazy" decoding="async">
-              <img src="img/djforher.webp" width="600" height="338" alt="Man in a hoodie DJing on a sidewalk with a cable plugged into a woman&#x27;s headphones" loading="lazy" decoding="async">
-              <img src="img/touchgrass.webp" width="600" height="600" alt="Computer mouse filled with grass: &quot;Do you want to touch grass? Yes.&quot;" loading="lazy" decoding="async">
-              <img src="img/movementstennis.webp" width="600" height="801" alt="Blurred photo of a tennis player mid-swing, titled Movements of Tennis" loading="lazy" decoding="async">
-              <img src="img/creativeprocess.webp" width="600" height="750" alt="Screen text: the creative process, from this is awesome to I suck and back to awesome" loading="lazy" decoding="async">
-              <img src="img/dogchart.webp" width="600" height="899" alt="Chart of dog breeds and the eras they come from" loading="lazy" decoding="async">
-              <img src="img/dreamharder.webp" width="600" height="796" alt="Blue figure looking up at falling stars: &quot;Dream harder&quot;" loading="lazy" decoding="async">
-              <img src="img/range.webp" width="600" height="748" alt="Yellow vintage Range Rover parked in a garage" loading="lazy" decoding="async">
-              <img src="img/houseart.webp" width="600" height="663" alt="Painting of rows of small red and blue houses with wavy patterns" loading="lazy" decoding="async">
-              <img src="img/tee.webp" width="600" height="750" alt="Blurred tennis court with a ball in the air" loading="lazy" decoding="async">
-              <img src="img/plantcreatures.webp" width="600" height="467" alt="Ink drawing of small creatures tending potted plants under a window" loading="lazy" decoding="async">
-              <img src="img/imfinished.webp" width="600" height="130" alt="Book line: nothing helps, I must help myself, or I am finished" loading="lazy" decoding="async">
-              <img src="img/trainmountain.webp" width="600" height="900" alt="Train crossing a bridge in a deep green mountain valley" loading="lazy" decoding="async">
-              <img src="img/ancienttemple.webp" width="600" height="794" alt="Classical stone temple hidden in green cliffs above a river" loading="lazy" decoding="async">
-              <img src="img/greenhouse.webp" width="600" height="900" alt="Palm trees inside an old glass greenhouse" loading="lazy" decoding="async">
-              <img src="img/childrenpoem.webp" width="600" height="370" alt="Poem about admiring how children have no dignity" loading="lazy" decoding="async">
-              <img src="img/trainview.webp" width="600" height="742" alt="Train dining table and lamp facing a window with mountain views" loading="lazy" decoding="async">
-              <img src="img/midcenturyliving.webp" width="600" height="811" alt="Midcentury living room with leather chairs and big windows onto trees" loading="lazy" decoding="async">
-              <img src="img/starsmindfulness.webp" width="600" height="591" alt="Cartoon stars and clouds: you don&#x27;t always have to be doing something, you can just be" loading="lazy" decoding="async">
-              <img src="img/topsoil.webp" width="600" height="675" alt="Garden painting: we owe our existence to six inches of topsoil and the fact it rains" loading="lazy" decoding="async">
-              <img src="img/husbandwifetree.webp" width="600" height="449" alt="Old drawing of a farmhouse between two trees, labeled husband-and-wife trees" loading="lazy" decoding="async">
+              <img src="img/progress.webp" srcset="img/progress.webp 600w, img/progress@2x.webp 800w" sizes="360px" width="600" height="618" alt="Diagram of progress cycling between experience, theory and systems over time" loading="lazy" decoding="async">
+              <img src="img/flooded.webp" srcset="img/flooded.webp 600w, img/flooded@2x.webp 1080w" sizes="360px" width="600" height="750" alt="Flooded Mercedes dealership with cars underwater" loading="lazy" decoding="async">
+              <img src="img/afterlife.webp" srcset="img/afterlife.webp 600w, img/afterlife@2x.webp 720w" sizes="360px" width="600" height="571" alt="Short text joke about entering the afterlife and recovering an enlightenment code" loading="lazy" decoding="async">
+              <img src="img/motivation.webp" srcset="img/motivation.webp 600w, img/motivation@2x.webp 1024w" sizes="360px" width="600" height="600" alt="Two film stills of an old man making tea: it&#x27;s boring to do nothing" loading="lazy" decoding="async">
+              <img src="img/birds.webp" srcset="img/birds.webp 600w, img/birds@2x.webp 800w" sizes="360px" width="600" height="750" alt="Two razorbills touching beaks on a rock" loading="lazy" decoding="async">
+              <img src="img/jamal.webp" srcset="img/jamal.webp 600w, img/jamal@2x.webp 1200w" sizes="360px" width="600" height="754" alt="Hands reaching for a basketball: Jamal Murray made a shot" loading="lazy" decoding="async">
+              <img src="img/waves.webp" srcset="img/waves.webp 600w, img/waves@2x.webp 998w" sizes="360px" width="600" height="721" alt="Aerial view of long blue ocean swells reaching a beach" loading="lazy" decoding="async">
+              <img src="img/comic.webp" srcset="img/comic.webp 600w, img/comic@2x.webp 1200w" sizes="360px" width="600" height="656" alt="Orange hand-drawn comic: when I think of you, can you feel it?" loading="lazy" decoding="async">
+              <img src="img/downtown.webp" srcset="img/downtown.webp 600w, img/downtown@2x.webp 1200w" sizes="360px" width="600" height="800" alt="Brownstone street lined with wisteria under a blue sky" loading="lazy" decoding="async">
+              <img src="img/spectrum.webp" srcset="img/spectrum.webp 600w, img/spectrum@2x.webp 1200w" sizes="360px" width="600" height="592" alt="Swirling purple and blue marbled paint" loading="lazy" decoding="async">
+              <img src="img/colorwheel.webp" srcset="img/colorwheel.webp 600w, img/colorwheel@2x.webp 750w" sizes="360px" width="600" height="514" alt="Tiny people arranged in a circle forming a color wheel" loading="lazy" decoding="async">
+              <img src="img/court.webp" srcset="img/court.webp 600w, img/court@2x.webp 1170w" sizes="360px" width="600" height="701" alt="Clay tennis court under a curved wooden dome roof" loading="lazy" decoding="async">
+              <img src="img/process.webp" srcset="img/process.webp 600w, img/process@2x.webp 1200w" sizes="360px" width="600" height="614" alt="List of ten rules about the creative process and enjoying the work" loading="lazy" decoding="async">
+              <img src="img/desk.webp" srcset="img/desk.webp 600w, img/desk@2x.webp 1200w" sizes="360px" width="600" height="732" alt="Cozy desk crowded with plants and books by a window" loading="lazy" decoding="async">
+              <img src="img/perplexity.webp" srcset="img/perplexity.webp 600w, img/perplexity@2x.webp 1200w" sizes="360px" width="600" height="800" alt="Person reading a book under stars: there&#x27;s always more to learn" loading="lazy" decoding="async">
+              <img src="img/trees.webp" srcset="img/trees.webp 600w, img/trees@2x.webp 1080w" sizes="360px" width="600" height="750" alt="Tall trees growing up through a skylight in a white room" loading="lazy" decoding="async">
+              <img src="img/socrates.webp" srcset="img/socrates.webp 600w, img/socrates@2x.webp 1200w" sizes="360px" width="600" height="639" alt="Ten rules for living, from facing your fears to living your morality in private" loading="lazy" decoding="async">
+              <img src="img/aura.webp" srcset="img/aura.webp 600w, img/aura@2x.webp 1200w" sizes="360px" width="600" height="514" alt="Two figures in wireframe energy fields: I hate texting, can we merge auric fields?" loading="lazy" decoding="async">
+              <img src="img/expand.webp" srcset="img/expand.webp 600w, img/expand@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Collage of a brain diagram with soldiers climbing a ladder" loading="lazy" decoding="async">
+              <img src="img/monkeys.webp" srcset="img/monkeys.webp 600w, img/monkeys@2x.webp 1200w" sizes="360px" width="600" height="400" alt="Two workers hanging a large painting of parliament filled with chimpanzees" loading="lazy" decoding="async">
+              <img src="img/tweet.webp" srcset="img/tweet.webp 600w, img/tweet@2x.webp 749w" sizes="360px" width="600" height="587" alt="Billboard of a tweet: your first anything will be bad, so put your ego aside and start" loading="lazy" decoding="async">
+              <img src="img/room.webp" srcset="img/room.webp 600w, img/room@2x.webp 736w" sizes="360px" width="600" height="1066" alt="Eclectic living room packed with books, rugs and warm light" loading="lazy" decoding="async">
+              <img src="img/sea.webp" srcset="img/sea.webp 600w, img/sea@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Globe on black: no division between continents in the digital, only the sea is free" loading="lazy" decoding="async">
+              <img src="img/nostalgia.webp" srcset="img/nostalgia.webp 600w, img/nostalgia@2x.webp 1085w" sizes="360px" width="600" height="1133" alt="Chart showing nostalgia peaks at a certain age across categories" loading="lazy" decoding="async">
+              <img src="img/lockheed.webp" srcset="img/lockheed.webp 600w, img/lockheed@2x.webp 697w" sizes="360px" width="600" height="337" alt="Lockheed Martin logo with letters missing so it reads &quot;Lock ed In&quot;" loading="lazy" decoding="async">
+              <img src="img/bed.webp" srcset="img/bed.webp 600w, img/bed@2x.webp 964w" sizes="360px" width="600" height="747" alt="Minimal bedroom with a low bed, bookshelves and sheer curtains" loading="lazy" decoding="async">
+              <img src="img/rocks.webp" srcset="img/rocks.webp 600w, img/rocks@2x.webp 1080w" sizes="360px" width="600" height="749" alt="Pile of colorful sea glass" loading="lazy" decoding="async">
+              <img src="img/wall.webp" srcset="img/wall.webp 600w, img/wall@2x.webp 1170w" sizes="360px" width="600" height="722" alt="Narrow building with a dark tiled facade on a European street" loading="lazy" decoding="async">
+              <img src="img/keys.webp" srcset="img/keys.webp 600w, img/keys@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Close-up of a white computer keyboard" loading="lazy" decoding="async">
+              <img src="img/porche.webp" srcset="img/porche.webp 600w, img/porche@2x.webp 1024w" sizes="360px" width="600" height="623" alt="Cream Porsche 911 on a tree-lined road" loading="lazy" decoding="async">
+              <img src="img/skater.webp" srcset="img/skater.webp 600w, img/skater@2x.webp 1200w" sizes="360px" width="600" height="748" alt="Line drawing of a figure on a skateboard" loading="lazy" decoding="async">
+              <img src="img/office.webp" srcset="img/office.webp 600w, img/office@2x.webp 1200w" sizes="360px" width="600" height="800" alt="Clean home office with a desk, computer and a dog portrait on the wall" loading="lazy" decoding="async">
+              <img src="img/gh.webp" srcset="img/gh.webp 600w, img/gh@2x.webp 1080w" sizes="360px" width="600" height="600" alt="Lighthouse at the end of a pier at sunset" loading="lazy" decoding="async">
+              <img src="img/tiger.webp" srcset="img/tiger.webp 600w, img/tiger@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Golfer in a green jacket eating at a dinner table" loading="lazy" decoding="async">
+              <img src="img/thugtravis.webp" srcset="img/thugtravis.webp 600w, img/thugtravis@2x.webp 1200w" sizes="360px" width="600" height="654" alt="Man in a sweater and white sneakers swinging a golf club near sports cars" loading="lazy" decoding="async">
+              <img src="img/certainty.webp" srcset="img/certainty.webp 600w, img/certainty@2x.webp 991w" sizes="360px" width="600" height="680" alt="Painting of a bird and a boy: you must learn to proceed without certainty" loading="lazy" decoding="async">
+              <img src="img/mansion.webp" srcset="img/mansion.webp 600w, img/mansion@2x.webp 825w" sizes="360px" width="600" height="400" alt="Aerial view of a mansion on a turquoise Caribbean coast" loading="lazy" decoding="async">
+              <img src="img/lebron.webp" srcset="img/lebron.webp 600w, img/lebron@2x.webp 1200w" sizes="360px" width="600" height="400" alt="Basketball player mid-dunk in a packed arena" loading="lazy" decoding="async">
+              <img src="img/cloudtree.webp" srcset="img/cloudtree.webp 600w, img/cloudtree@2x.webp 735w" sizes="360px" width="600" height="888" alt="Tree branch that looks like it is giving off a cloud against a blue sky" loading="lazy" decoding="async">
+              <img src="img/beingmaking.webp" srcset="img/beingmaking.webp 600w, img/beingmaking@2x.webp 1196w" sizes="360px" width="600" height="260" alt="Short passage: being is making, not only large things but an afternoon or a meal" loading="lazy" decoding="async">
+              <img src="img/aidogs.webp" srcset="img/aidogs.webp 600w, img/aidogs@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Grid of loose line drawings of dogs" loading="lazy" decoding="async">
+              <img src="img/libraryposter.webp" srcset="img/libraryposter.webp 600w, img/libraryposter@2x.webp 1064w" sizes="360px" width="600" height="804" alt="Library poster: a child reading by firelight in a dark forest" loading="lazy" decoding="async">
+              <img src="img/foggyporche.webp" srcset="img/foggyporche.webp 600w, img/foggyporche@2x.webp 1200w" sizes="360px" width="600" height="748" alt="Lone gas station in heavy fog" loading="lazy" decoding="async">
+              <img src="img/circlesnow.webp" srcset="img/circlesnow.webp 600w, img/circlesnow@2x.webp 1200w" sizes="360px" width="600" height="373" alt="Doodle of a figure walking in circles: I guess we doin circles now" loading="lazy" decoding="async">
+              <img src="img/djforher.webp" srcset="img/djforher.webp 600w, img/djforher@2x.webp 1011w" sizes="360px" width="600" height="338" alt="Man in a hoodie DJing on a sidewalk with a cable plugged into a woman&#x27;s headphones" loading="lazy" decoding="async">
+              <img src="img/touchgrass.webp" srcset="img/touchgrass.webp 600w, img/touchgrass@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Computer mouse filled with grass: &quot;Do you want to touch grass? Yes.&quot;" loading="lazy" decoding="async">
+              <img src="img/movementstennis.webp" srcset="img/movementstennis.webp 600w, img/movementstennis@2x.webp 1200w" sizes="360px" width="600" height="801" alt="Blurred photo of a tennis player mid-swing, titled Movements of Tennis" loading="lazy" decoding="async">
+              <img src="img/creativeprocess.webp" srcset="img/creativeprocess.webp 600w, img/creativeprocess@2x.webp 1080w" sizes="360px" width="600" height="750" alt="Screen text: the creative process, from this is awesome to I suck and back to awesome" loading="lazy" decoding="async">
+              <img src="img/dogchart.webp" srcset="img/dogchart.webp 600w, img/dogchart@2x.webp 1200w" sizes="360px" width="600" height="899" alt="Chart of dog breeds and the eras they come from" loading="lazy" decoding="async">
+              <img src="img/dreamharder.webp" srcset="img/dreamharder.webp 600w, img/dreamharder@2x.webp 904w" sizes="360px" width="600" height="796" alt="Blue figure looking up at falling stars: &quot;Dream harder&quot;" loading="lazy" decoding="async">
+              <img src="img/range.webp" srcset="img/range.webp 600w, img/range@2x.webp 1200w" sizes="360px" width="600" height="748" alt="Yellow vintage Range Rover parked in a garage" loading="lazy" decoding="async">
+              <img src="img/houseart.webp" srcset="img/houseart.webp 600w, img/houseart@2x.webp 1200w" sizes="360px" width="600" height="663" alt="Painting of rows of small red and blue houses with wavy patterns" loading="lazy" decoding="async">
+              <img src="img/tee.webp" srcset="img/tee.webp 600w, img/tee@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Blurred tennis court with a ball in the air" loading="lazy" decoding="async">
+              <img src="img/plantcreatures.webp" srcset="img/plantcreatures.webp 600w, img/plantcreatures@2x.webp 1200w" sizes="360px" width="600" height="467" alt="Ink drawing of small creatures tending potted plants under a window" loading="lazy" decoding="async">
+              <img src="img/imfinished.webp" srcset="img/imfinished.webp 600w, img/imfinished@2x.webp 1000w" sizes="360px" width="600" height="130" alt="Book line: nothing helps, I must help myself, or I am finished" loading="lazy" decoding="async">
+              <img src="img/trainmountain.webp" srcset="img/trainmountain.webp 600w, img/trainmountain@2x.webp 1200w" sizes="360px" width="600" height="900" alt="Train crossing a bridge in a deep green mountain valley" loading="lazy" decoding="async">
+              <img src="img/ancienttemple.webp" srcset="img/ancienttemple.webp 600w, img/ancienttemple@2x.webp 1200w" sizes="360px" width="600" height="794" alt="Classical stone temple hidden in green cliffs above a river" loading="lazy" decoding="async">
+              <img src="img/greenhouse.webp" srcset="img/greenhouse.webp 600w, img/greenhouse@2x.webp 1200w" sizes="360px" width="600" height="900" alt="Palm trees inside an old glass greenhouse" loading="lazy" decoding="async">
+              <img src="img/childrenpoem.webp" srcset="img/childrenpoem.webp 600w, img/childrenpoem@2x.webp 1000w" sizes="360px" width="600" height="370" alt="Poem about admiring how children have no dignity" loading="lazy" decoding="async">
+              <img src="img/trainview.webp" srcset="img/trainview.webp 600w, img/trainview@2x.webp 1000w" sizes="360px" width="600" height="742" alt="Train dining table and lamp facing a window with mountain views" loading="lazy" decoding="async">
+              <img src="img/midcenturyliving.webp" srcset="img/midcenturyliving.webp 600w, img/midcenturyliving@2x.webp 1000w" sizes="360px" width="600" height="811" alt="Midcentury living room with leather chairs and big windows onto trees" loading="lazy" decoding="async">
+              <img src="img/starsmindfulness.webp" srcset="img/starsmindfulness.webp 600w, img/starsmindfulness@2x.webp 1000w" sizes="360px" width="600" height="591" alt="Cartoon stars and clouds: you don&#x27;t always have to be doing something, you can just be" loading="lazy" decoding="async">
+              <img src="img/topsoil.webp" srcset="img/topsoil.webp 600w, img/topsoil@2x.webp 992w" sizes="360px" width="600" height="675" alt="Garden painting: we owe our existence to six inches of topsoil and the fact it rains" loading="lazy" decoding="async">
+              <img src="img/husbandwifetree.webp" srcset="img/husbandwifetree.webp 600w, img/husbandwifetree@2x.webp 1200w" sizes="360px" width="600" height="449" alt="Old drawing of a farmhouse between two trees, labeled husband-and-wife trees" loading="lazy" decoding="async">
               <img src="img/nextlife.webp" width="500" height="648" alt="George Carlin piece about living your next life backwards" loading="lazy" decoding="async">
-              <img src="img/tennisstamp.webp" width="600" height="600" alt="Postage stamp of two table tennis players" loading="lazy" decoding="async">
-              <img src="img/longestwalk.webp" width="600" height="470" alt="Wikipedia entry on the longest walk, a four-year solo walk across 21 countries" loading="lazy" decoding="async">
-              <img src="img/nonstopsupersonic.webp" width="600" height="721" alt="Flight search filter with &quot;Nonstop supersonic&quot; selected" loading="lazy" decoding="async">
-              <img src="img/uphillrock.webp" width="600" height="623" alt="Figure pushing a boulder: find delight in pushing your rock up your hill" loading="lazy" decoding="async">
-              <img src="img/outsidebenefits.webp" width="600" height="756" alt="Illustrated poster of people outdoors: being outside benefits you inside" loading="lazy" decoding="async">
-              <img src="img/lionporsche.webp" width="600" height="748" alt="Two lion cubs sitting on a covered Porsche" loading="lazy" decoding="async">
-              <img src="img/f1batman.webp" width="600" height="741" alt="Two racing drivers on the ground between an F1 car and a Batmobile" loading="lazy" decoding="async">
+              <img src="img/tennisstamp.webp" srcset="img/tennisstamp.webp 600w, img/tennisstamp@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Postage stamp of two table tennis players" loading="lazy" decoding="async">
+              <img src="img/longestwalk.webp" srcset="img/longestwalk.webp 600w, img/longestwalk@2x.webp 1200w" sizes="360px" width="600" height="470" alt="Wikipedia entry on the longest walk, a four-year solo walk across 21 countries" loading="lazy" decoding="async">
+              <img src="img/nonstopsupersonic.webp" srcset="img/nonstopsupersonic.webp 600w, img/nonstopsupersonic@2x.webp 734w" sizes="360px" width="600" height="721" alt="Flight search filter with &quot;Nonstop supersonic&quot; selected" loading="lazy" decoding="async">
+              <img src="img/uphillrock.webp" srcset="img/uphillrock.webp 600w, img/uphillrock@2x.webp 1169w" sizes="360px" width="600" height="623" alt="Figure pushing a boulder: find delight in pushing your rock up your hill" loading="lazy" decoding="async">
+              <img src="img/outsidebenefits.webp" srcset="img/outsidebenefits.webp 600w, img/outsidebenefits@2x.webp 735w" sizes="360px" width="600" height="756" alt="Illustrated poster of people outdoors: being outside benefits you inside" loading="lazy" decoding="async">
+              <img src="img/lionporsche.webp" srcset="img/lionporsche.webp 600w, img/lionporsche@2x.webp 1080w" sizes="360px" width="600" height="748" alt="Two lion cubs sitting on a covered Porsche" loading="lazy" decoding="async">
+              <img src="img/f1batman.webp" srcset="img/f1batman.webp 600w, img/f1batman@2x.webp 1200w" sizes="360px" width="600" height="741" alt="Two racing drivers on the ground between an F1 car and a Batmobile" loading="lazy" decoding="async">
               <img src="img/prosandcons.webp" width="563" height="737" alt="Illustration: the pros and cons of getting lost" loading="lazy" decoding="async">
-              <img src="img/arcteryx.webp" width="600" height="600" alt="Arc&#x27;teryx-branded gondola over snow" loading="lazy" decoding="async">
-              <img src="img/badnews.webp" width="600" height="651" alt="Social posts about abandoning the flesh for the machine, then the machine for the divine" loading="lazy" decoding="async">
+              <img src="img/arcteryx.webp" srcset="img/arcteryx.webp 600w, img/arcteryx@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Arc&#x27;teryx-branded gondola over snow" loading="lazy" decoding="async">
+              <img src="img/badnews.webp" srcset="img/badnews.webp 600w, img/badnews@2x.webp 1080w" sizes="360px" width="600" height="651" alt="Social posts about abandoning the flesh for the machine, then the machine for the divine" loading="lazy" decoding="async">
               <img src="img/bomb.webp" width="336" height="336" alt="Plane dropping bombs that spell &quot;progress&quot; on an orange background" loading="lazy" decoding="async">
-              <img src="img/catcar.webp" width="600" height="518" alt="Cat sitting in an old Caterpillar machine" loading="lazy" decoding="async">
-              <img src="img/circleflower.webp" width="600" height="766" alt="Ring of yellow dandelions in a field" loading="lazy" decoding="async">
-              <img src="img/circlewalk.webp" width="600" height="491" alt="Tiny figures walking in a circle" loading="lazy" decoding="async">
-              <img src="img/clockclock.webp" width="600" height="600" alt="Wall clock where the hour marks are tiny clocks" loading="lazy" decoding="async">
-              <img src="img/coins.webp" width="600" height="894" alt="Flyer claiming every coin has a human soul in it" loading="lazy" decoding="async">
-              <img src="img/cornell.webp" width="600" height="793" alt="Handwritten Grateful Dead setlist from Cornell, May 8, 1977" loading="lazy" decoding="async">
-              <img src="img/cslyc.webp" width="600" height="600" alt="T-shirt reading &quot;Can&#x27;t Stop Loving You Club&quot;" loading="lazy" decoding="async">
-              <img src="img/defunctcapital.webp" width="600" height="766" alt="Contact sheet of black and white photos of the US Capitol" loading="lazy" decoding="async">
-              <img src="img/glassbook.webp" width="600" height="600" alt="Glass book titled &quot;Como imprimir sombras&quot;" loading="lazy" decoding="async">
-              <img src="img/indoorcamp.webp" width="600" height="750" alt="Yellow tent set up inside a cluttered room" loading="lazy" decoding="async">
-              <img src="img/jets.webp" width="600" height="450" alt="Private jets under a hangar at sunset" loading="lazy" decoding="async">
-              <img src="img/labels.webp" width="600" height="800" alt="Old Soviet beer labels arranged on a page" loading="lazy" decoding="async">
-              <img src="img/love111.webp" width="600" height="546" alt="Stadium scoreboard: the only thing more powerful than hate is love" loading="lazy" decoding="async">
-              <img src="img/minimalfarm.webp" width="600" height="800" alt="Minimal aerial illustration of farmland" loading="lazy" decoding="async">
-              <img src="img/mtjoygoose.webp" width="600" height="750" alt="Mt. Joy and Goose concert poster, Madison, September 2025" loading="lazy" decoding="async">
+              <img src="img/catcar.webp" srcset="img/catcar.webp 600w, img/catcar@2x.webp 960w" sizes="360px" width="600" height="518" alt="Cat sitting in an old Caterpillar machine" loading="lazy" decoding="async">
+              <img src="img/circleflower.webp" srcset="img/circleflower.webp 600w, img/circleflower@2x.webp 802w" sizes="360px" width="600" height="766" alt="Ring of yellow dandelions in a field" loading="lazy" decoding="async">
+              <img src="img/circlewalk.webp" srcset="img/circlewalk.webp 600w, img/circlewalk@2x.webp 1200w" sizes="360px" width="600" height="491" alt="Tiny figures walking in a circle" loading="lazy" decoding="async">
+              <img src="img/clockclock.webp" srcset="img/clockclock.webp 600w, img/clockclock@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Wall clock where the hour marks are tiny clocks" loading="lazy" decoding="async">
+              <img src="img/coins.webp" srcset="img/coins.webp 600w, img/coins@2x.webp 1036w" sizes="360px" width="600" height="894" alt="Flyer claiming every coin has a human soul in it" loading="lazy" decoding="async">
+              <img src="img/cornell.webp" srcset="img/cornell.webp 600w, img/cornell@2x.webp 1200w" sizes="360px" width="600" height="793" alt="Handwritten Grateful Dead setlist from Cornell, May 8, 1977" loading="lazy" decoding="async">
+              <img src="img/cslyc.webp" srcset="img/cslyc.webp 600w, img/cslyc@2x.webp 1080w" sizes="360px" width="600" height="600" alt="T-shirt reading &quot;Can&#x27;t Stop Loving You Club&quot;" loading="lazy" decoding="async">
+              <img src="img/defunctcapital.webp" srcset="img/defunctcapital.webp 600w, img/defunctcapital@2x.webp 1200w" sizes="360px" width="600" height="766" alt="Contact sheet of black and white photos of the US Capitol" loading="lazy" decoding="async">
+              <img src="img/glassbook.webp" srcset="img/glassbook.webp 600w, img/glassbook@2x.webp 900w" sizes="360px" width="600" height="600" alt="Glass book titled &quot;Como imprimir sombras&quot;" loading="lazy" decoding="async">
+              <img src="img/indoorcamp.webp" srcset="img/indoorcamp.webp 600w, img/indoorcamp@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Yellow tent set up inside a cluttered room" loading="lazy" decoding="async">
+              <img src="img/jets.webp" srcset="img/jets.webp 600w, img/jets@2x.webp 1200w" sizes="360px" width="600" height="450" alt="Private jets under a hangar at sunset" loading="lazy" decoding="async">
+              <img src="img/labels.webp" srcset="img/labels.webp 600w, img/labels@2x.webp 1080w" sizes="360px" width="600" height="800" alt="Old Soviet beer labels arranged on a page" loading="lazy" decoding="async">
+              <img src="img/love111.webp" srcset="img/love111.webp 600w, img/love111@2x.webp 806w" sizes="360px" width="600" height="546" alt="Stadium scoreboard: the only thing more powerful than hate is love" loading="lazy" decoding="async">
+              <img src="img/minimalfarm.webp" srcset="img/minimalfarm.webp 600w, img/minimalfarm@2x.webp 1200w" sizes="360px" width="600" height="800" alt="Minimal aerial illustration of farmland" loading="lazy" decoding="async">
+              <img src="img/mtjoygoose.webp" srcset="img/mtjoygoose.webp 600w, img/mtjoygoose@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Mt. Joy and Goose concert poster, Madison, September 2025" loading="lazy" decoding="async">
               <img src="img/nogratefuldead.webp" width="502" height="592" alt="Anthony Bourdain quote about banning Billy Joel and the Grateful Dead from his kitchen" loading="lazy" decoding="async">
-              <img src="img/quantum.webp" width="600" height="729" alt="Page of dense physics equations" loading="lazy" decoding="async">
-              <img src="img/realorpretent.webp" width="600" height="600" alt="Doodle of a kid asking: when I grow up will I be real or pretend?" loading="lazy" decoding="async">
-              <img src="img/refill.webp" width="600" height="456" alt="Tanker plane refueling another plane over mountains" loading="lazy" decoding="async">
-              <img src="img/skiing.webp" width="600" height="720" alt="Illustration of a skier in an empty snowy city street" loading="lazy" decoding="async">
-              <img src="img/spongebob.webp" width="600" height="474" alt="Painting of ocean waves on a beach" loading="lazy" decoding="async">
-              <img src="img/stopscrolling.webp" width="600" height="600" alt="Pink cap: Stop Scrolling, the internet is a magical space portal not a mental prison" loading="lazy" decoding="async">
-              <img src="img/tags.webp" width="600" height="609" alt="Green clothing size tags on a wooden floor" loading="lazy" decoding="async">
-              <img src="img/ties.webp" width="600" height="746" alt="Novelty neckties shaped like fish, stars and piano keys" loading="lazy" decoding="async">
-              <img src="img/transportefficiency.webp" width="600" height="890" alt="Chart of energy efficiency of animals and vehicles, with a human on a bicycle the most efficient" loading="lazy" decoding="async">
-              <img src="img/watchtypeshi.webp" width="600" height="750" alt="Men squeezed into a car&#x27;s back seat: hardtokill" loading="lazy" decoding="async">
-              <img src="img/woodcomp.webp" width="600" height="600" alt="Computer screen mounted on a curved wooden stand" loading="lazy" decoding="async">
-              <img src="img/rocket.webp" width="600" height="800" alt="Two kids sitting on a curb watching a rocket trail in the sky" loading="lazy" decoding="async">
-              <img src="img/dostevsky.webp" width="600" height="503" alt="Dostoevsky quote about the mystery of existence being to find something to live for" loading="lazy" decoding="async">
-              <img src="img/unkindtruth.webp" width="600" height="581" alt="Chart: unkind truths lead to functional systems, kind lies lead to dysfunctional ones" loading="lazy" decoding="async">
-              <img src="img/samsara.webp" width="600" height="600" alt="Man holding a wheel of life: &quot;Not for me, thanks. I shall not return.&quot;" loading="lazy" decoding="async">
-              <img src="img/puppytoes.webp" width="600" height="789" alt="Playing cards with dogs drawn into the suits" loading="lazy" decoding="async">
-              <img src="img/fire.webp" width="600" height="566" alt="Collection of flame graphics on black" loading="lazy" decoding="async">
-              <img src="img/circuits.webp" width="600" height="452" alt="Golden face made of circuit board traces" loading="lazy" decoding="async">
-              <img src="img/minecraft.webp" width="600" height="600" alt="Warm orange light through a window onto a wall" loading="lazy" decoding="async">
-              <img src="img/amg.webp" width="600" height="686" alt="Black Mercedes sedan in black and white" loading="lazy" decoding="async">
-              <img src="img/firstclass.webp" width="600" height="469" alt="Business card for First Class Tree Service" loading="lazy" decoding="async">
-              <img src="img/surfaces.webp" width="600" height="577" alt="Diagram of an eye seeing a smiley face on two surfaces" loading="lazy" decoding="async">
-              <img src="img/refocus.webp" width="600" height="750" alt="Brain scan: it takes 23 minutes to refocus after an interruption" loading="lazy" decoding="async">
-              <img src="img/bookmark.webp" width="600" height="800" alt="Beaded bookmark of two blue fish" loading="lazy" decoding="async">
-              <img src="img/mw2.webp" width="600" height="638" alt="T-shirt joke: instead of buying bitcoin in 2009 I was sniping noggins on Call of Duty" loading="lazy" decoding="async">
-              <img src="img/substances.webp" width="600" height="533" alt="Diagram mapping substances to values like peace, harmony and independence" loading="lazy" decoding="async">
-              <img src="img/hustle.webp" width="600" height="580" alt="Comic of two men in chains: hustle more and you can be bound by gold chains" loading="lazy" decoding="async">
-              <img src="img/friends.webp" width="600" height="900" alt="Pixel comic of two birds flying through snow" loading="lazy" decoding="async">
-              <img src="img/pets.webp" width="600" height="457" alt="Red dog and blue cat running together" loading="lazy" decoding="async">
-              <img src="img/birdmail.webp" width="600" height="722" alt="Flock of colorful birds rising from an envelope marked Bird Mail" loading="lazy" decoding="async">
-              <img src="img/forget.webp" width="600" height="586" alt="Doodles of simple things: we quickly forget how amazing they are" loading="lazy" decoding="async">
-              <img src="img/apollo.webp" width="600" height="565" alt="Apollo moon plaque: we came in peace for all mankind" loading="lazy" decoding="async">
-              <img src="img/laughter.webp" width="600" height="328" alt="How people type laughter in different languages" loading="lazy" decoding="async">
-              <img src="img/lunarcartoon.webp" width="600" height="749" alt="Cartoon of astronauts beside a lunar lander" loading="lazy" decoding="async">
-              <img src="img/gd.webp" width="600" height="600" alt="Grid of Grateful Dead-style illustrated badges" loading="lazy" decoding="async">
-              <img src="img/augustagolf.webp" width="600" height="600" alt="Aerial of an island covered in golf greens" loading="lazy" decoding="async">
-              <img src="img/cruiser.webp" width="600" height="741" alt="White vintage Land Cruiser in a studio" loading="lazy" decoding="async">
-              <img src="img/mountaintennis.webp" width="600" height="799" alt="Clay tennis court on a mountainside lawn" loading="lazy" decoding="async">
-              <img src="img/characters.webp" width="600" height="280" alt="Chinese characters built by combining the five elements" loading="lazy" decoding="async">
-              <img src="img/claude.webp" width="600" height="1300" alt="Phone note of a rant about humans, senses and reality" loading="lazy" decoding="async">
-              <img src="img/return.webp" width="600" height="397" alt="Fish painting: joy has a habit of returning" loading="lazy" decoding="async">
-              <img src="img/sun.webp" width="600" height="899" alt="Grid of painted suns: you are the sun" loading="lazy" decoding="async">
-              <img src="img/suffering.webp" width="600" height="600" alt="Helmet etched with: suffering feels religious if you do it right" loading="lazy" decoding="async">
-              <img src="img/dodge.webp" width="600" height="582" alt="Wikipedia entry for Dodge v. Ford Motor Co. on shareholder primacy" loading="lazy" decoding="async">
-              <img src="img/create.webp" width="600" height="600" alt="Folk-art figures with the words: it&#x27;s better to create something that others criticize than to create nothing and criticize others" loading="lazy" decoding="async">
-              <img src="img/lufthansa.webp" width="600" height="750" alt="Lufthansa 747 flying over a hilltop castle in the Alps" loading="lazy" decoding="async">
-              <img src="img/coastcity.webp" width="600" height="802" alt="Illustration of an endless wall of high-rises along a coastline under pink clouds" loading="lazy" decoding="async">
-              <img src="img/island.webp" width="600" height="338" alt="Person on a beach facing a misty island, captioned: we are going to fucking kill you" loading="lazy" decoding="async">
-              <img src="img/stargate.webp" width="600" height="371" alt="Diagram labeled Figure 7, a stargate, with figures reaching through rings" loading="lazy" decoding="async">
-              <img src="img/sayagain.webp" width="600" height="706" alt="Man in a suit gesturing mid-speech, subtitled: can you say that again" loading="lazy" decoding="async">
-              <img src="img/harbor.webp" width="600" height="393" alt="Drawing of boats: a ship in the harbor is safe, but that is not what ships are built for" loading="lazy" decoding="async">
-              <img src="img/mothlamp.webp" width="600" height="750" alt="Illustration: you pity the moth confusing a lamp for the moon, yet here you are confusing a screen for the world" loading="lazy" decoding="async">
-              <img src="img/skunkworks.webp" width="600" height="450" alt="Skunk Works chart: get to a prototype, with how fast each aircraft reached first flight" loading="lazy" decoding="async">
-              <img src="img/stopdoingmath.webp" width="600" height="600" alt="Stop doing math meme" loading="lazy" decoding="async">
-              <img src="img/datacenters.webp" width="600" height="797" alt="People lounging on a park lawn beside a data center: build more data centers" loading="lazy" decoding="async">
-              <img src="img/rsa260.webp" width="600" height="657" alt="Wikipedia entry noting RSA-260 was factored on September 3, 2026" loading="lazy" decoding="async">
+              <img src="img/quantum.webp" srcset="img/quantum.webp 600w, img/quantum@2x.webp 1042w" sizes="360px" width="600" height="729" alt="Page of dense physics equations" loading="lazy" decoding="async">
+              <img src="img/realorpretent.webp" srcset="img/realorpretent.webp 600w, img/realorpretent@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Doodle of a kid asking: when I grow up will I be real or pretend?" loading="lazy" decoding="async">
+              <img src="img/refill.webp" srcset="img/refill.webp 600w, img/refill@2x.webp 1200w" sizes="360px" width="600" height="456" alt="Tanker plane refueling another plane over mountains" loading="lazy" decoding="async">
+              <img src="img/skiing.webp" srcset="img/skiing.webp 600w, img/skiing@2x.webp 1200w" sizes="360px" width="600" height="720" alt="Illustration of a skier in an empty snowy city street" loading="lazy" decoding="async">
+              <img src="img/spongebob.webp" srcset="img/spongebob.webp 600w, img/spongebob@2x.webp 1200w" sizes="360px" width="600" height="474" alt="Painting of ocean waves on a beach" loading="lazy" decoding="async">
+              <img src="img/stopscrolling.webp" srcset="img/stopscrolling.webp 600w, img/stopscrolling@2x.webp 1000w" sizes="360px" width="600" height="600" alt="Pink cap: Stop Scrolling, the internet is a magical space portal not a mental prison" loading="lazy" decoding="async">
+              <img src="img/tags.webp" srcset="img/tags.webp 600w, img/tags@2x.webp 1179w" sizes="360px" width="600" height="609" alt="Green clothing size tags on a wooden floor" loading="lazy" decoding="async">
+              <img src="img/ties.webp" srcset="img/ties.webp 600w, img/ties@2x.webp 824w" sizes="360px" width="600" height="746" alt="Novelty neckties shaped like fish, stars and piano keys" loading="lazy" decoding="async">
+              <img src="img/transportefficiency.webp" srcset="img/transportefficiency.webp 600w, img/transportefficiency@2x.webp 862w" sizes="360px" width="600" height="890" alt="Chart of energy efficiency of animals and vehicles, with a human on a bicycle the most efficient" loading="lazy" decoding="async">
+              <img src="img/watchtypeshi.webp" srcset="img/watchtypeshi.webp 600w, img/watchtypeshi@2x.webp 1080w" sizes="360px" width="600" height="750" alt="Men squeezed into a car&#x27;s back seat: hardtokill" loading="lazy" decoding="async">
+              <img src="img/woodcomp.webp" srcset="img/woodcomp.webp 600w, img/woodcomp@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Computer screen mounted on a curved wooden stand" loading="lazy" decoding="async">
+              <img src="img/rocket.webp" srcset="img/rocket.webp 600w, img/rocket@2x.webp 1200w" sizes="360px" width="600" height="800" alt="Two kids sitting on a curb watching a rocket trail in the sky" loading="lazy" decoding="async">
+              <img src="img/dostevsky.webp" srcset="img/dostevsky.webp 600w, img/dostevsky@2x.webp 1200w" sizes="360px" width="600" height="503" alt="Dostoevsky quote about the mystery of existence being to find something to live for" loading="lazy" decoding="async">
+              <img src="img/unkindtruth.webp" srcset="img/unkindtruth.webp 600w, img/unkindtruth@2x.webp 1200w" sizes="360px" width="600" height="581" alt="Chart: unkind truths lead to functional systems, kind lies lead to dysfunctional ones" loading="lazy" decoding="async">
+              <img src="img/samsara.webp" srcset="img/samsara.webp 600w, img/samsara@2x.webp 1024w" sizes="360px" width="600" height="600" alt="Man holding a wheel of life: &quot;Not for me, thanks. I shall not return.&quot;" loading="lazy" decoding="async">
+              <img src="img/puppytoes.webp" srcset="img/puppytoes.webp 600w, img/puppytoes@2x.webp 700w" sizes="360px" width="600" height="789" alt="Playing cards with dogs drawn into the suits" loading="lazy" decoding="async">
+              <img src="img/fire.webp" srcset="img/fire.webp 600w, img/fire@2x.webp 1200w" sizes="360px" width="600" height="566" alt="Collection of flame graphics on black" loading="lazy" decoding="async">
+              <img src="img/circuits.webp" srcset="img/circuits.webp 600w, img/circuits@2x.webp 959w" sizes="360px" width="600" height="452" alt="Golden face made of circuit board traces" loading="lazy" decoding="async">
+              <img src="img/minecraft.webp" srcset="img/minecraft.webp 600w, img/minecraft@2x.webp 1080w" sizes="360px" width="600" height="600" alt="Warm orange light through a window onto a wall" loading="lazy" decoding="async">
+              <img src="img/amg.webp" srcset="img/amg.webp 600w, img/amg@2x.webp 1049w" sizes="360px" width="600" height="686" alt="Black Mercedes sedan in black and white" loading="lazy" decoding="async">
+              <img src="img/firstclass.webp" srcset="img/firstclass.webp 600w, img/firstclass@2x.webp 1200w" sizes="360px" width="600" height="469" alt="Business card for First Class Tree Service" loading="lazy" decoding="async">
+              <img src="img/surfaces.webp" srcset="img/surfaces.webp 600w, img/surfaces@2x.webp 968w" sizes="360px" width="600" height="577" alt="Diagram of an eye seeing a smiley face on two surfaces" loading="lazy" decoding="async">
+              <img src="img/refocus.webp" srcset="img/refocus.webp 600w, img/refocus@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Brain scan: it takes 23 minutes to refocus after an interruption" loading="lazy" decoding="async">
+              <img src="img/bookmark.webp" srcset="img/bookmark.webp 600w, img/bookmark@2x.webp 1200w" sizes="360px" width="600" height="800" alt="Beaded bookmark of two blue fish" loading="lazy" decoding="async">
+              <img src="img/mw2.webp" srcset="img/mw2.webp 600w, img/mw2@2x.webp 1200w" sizes="360px" width="600" height="638" alt="T-shirt joke: instead of buying bitcoin in 2009 I was sniping noggins on Call of Duty" loading="lazy" decoding="async">
+              <img src="img/substances.webp" srcset="img/substances.webp 600w, img/substances@2x.webp 1200w" sizes="360px" width="600" height="533" alt="Diagram mapping substances to values like peace, harmony and independence" loading="lazy" decoding="async">
+              <img src="img/hustle.webp" srcset="img/hustle.webp 600w, img/hustle@2x.webp 1200w" sizes="360px" width="600" height="580" alt="Comic of two men in chains: hustle more and you can be bound by gold chains" loading="lazy" decoding="async">
+              <img src="img/friends.webp" srcset="img/friends.webp 600w, img/friends@2x.webp 1000w" sizes="360px" width="600" height="900" alt="Pixel comic of two birds flying through snow" loading="lazy" decoding="async">
+              <img src="img/pets.webp" srcset="img/pets.webp 600w, img/pets@2x.webp 981w" sizes="360px" width="600" height="457" alt="Red dog and blue cat running together" loading="lazy" decoding="async">
+              <img src="img/birdmail.webp" srcset="img/birdmail.webp 600w, img/birdmail@2x.webp 1200w" sizes="360px" width="600" height="722" alt="Flock of colorful birds rising from an envelope marked Bird Mail" loading="lazy" decoding="async">
+              <img src="img/forget.webp" srcset="img/forget.webp 600w, img/forget@2x.webp 828w" sizes="360px" width="600" height="586" alt="Doodles of simple things: we quickly forget how amazing they are" loading="lazy" decoding="async">
+              <img src="img/apollo.webp" srcset="img/apollo.webp 600w, img/apollo@2x.webp 873w" sizes="360px" width="600" height="565" alt="Apollo moon plaque: we came in peace for all mankind" loading="lazy" decoding="async">
+              <img src="img/laughter.webp" srcset="img/laughter.webp 600w, img/laughter@2x.webp 1200w" sizes="360px" width="600" height="328" alt="How people type laughter in different languages" loading="lazy" decoding="async">
+              <img src="img/lunarcartoon.webp" srcset="img/lunarcartoon.webp 600w, img/lunarcartoon@2x.webp 1200w" sizes="360px" width="600" height="749" alt="Cartoon of astronauts beside a lunar lander" loading="lazy" decoding="async">
+              <img src="img/gd.webp" srcset="img/gd.webp 600w, img/gd@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Grid of Grateful Dead-style illustrated badges" loading="lazy" decoding="async">
+              <img src="img/augustagolf.webp" srcset="img/augustagolf.webp 600w, img/augustagolf@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Aerial of an island covered in golf greens" loading="lazy" decoding="async">
+              <img src="img/cruiser.webp" srcset="img/cruiser.webp 600w, img/cruiser@2x.webp 1080w" sizes="360px" width="600" height="741" alt="White vintage Land Cruiser in a studio" loading="lazy" decoding="async">
+              <img src="img/mountaintennis.webp" srcset="img/mountaintennis.webp 600w, img/mountaintennis@2x.webp 1200w" sizes="360px" width="600" height="799" alt="Clay tennis court on a mountainside lawn" loading="lazy" decoding="async">
+              <img src="img/characters.webp" srcset="img/characters.webp 600w, img/characters@2x.webp 1053w" sizes="360px" width="600" height="280" alt="Chinese characters built by combining the five elements" loading="lazy" decoding="async">
+              <img src="img/claude.webp" srcset="img/claude.webp 600w, img/claude@2x.webp 945w" sizes="360px" width="600" height="1300" alt="Phone note of a rant about humans, senses and reality" loading="lazy" decoding="async">
+              <img src="img/return.webp" srcset="img/return.webp 600w, img/return@2x.webp 736w" sizes="360px" width="600" height="397" alt="Fish painting: joy has a habit of returning" loading="lazy" decoding="async">
+              <img src="img/sun.webp" srcset="img/sun.webp 600w, img/sun@2x.webp 736w" sizes="360px" width="600" height="899" alt="Grid of painted suns: you are the sun" loading="lazy" decoding="async">
+              <img src="img/suffering.webp" srcset="img/suffering.webp 600w, img/suffering@2x.webp 1022w" sizes="360px" width="600" height="600" alt="Helmet etched with: suffering feels religious if you do it right" loading="lazy" decoding="async">
+              <img src="img/dodge.webp" srcset="img/dodge.webp 600w, img/dodge@2x.webp 959w" sizes="360px" width="600" height="582" alt="Wikipedia entry for Dodge v. Ford Motor Co. on shareholder primacy" loading="lazy" decoding="async">
+              <img src="img/create.webp" srcset="img/create.webp 600w, img/create@2x.webp 1080w" sizes="360px" width="600" height="600" alt="Folk-art figures with the words: it&#x27;s better to create something that others criticize than to create nothing and criticize others" loading="lazy" decoding="async">
+              <img src="img/lufthansa.webp" srcset="img/lufthansa.webp 600w, img/lufthansa@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Lufthansa 747 flying over a hilltop castle in the Alps" loading="lazy" decoding="async">
+              <img src="img/coastcity.webp" srcset="img/coastcity.webp 600w, img/coastcity@2x.webp 1200w" sizes="360px" width="600" height="802" alt="Illustration of an endless wall of high-rises along a coastline under pink clouds" loading="lazy" decoding="async">
+              <img src="img/island.webp" srcset="img/island.webp 600w, img/island@2x.webp 1200w" sizes="360px" width="600" height="338" alt="Person on a beach facing a misty island, captioned: we are going to fucking kill you" loading="lazy" decoding="async">
+              <img src="img/stargate.webp" srcset="img/stargate.webp 600w, img/stargate@2x.webp 900w" sizes="360px" width="600" height="371" alt="Diagram labeled Figure 7, a stargate, with figures reaching through rings" loading="lazy" decoding="async">
+              <img src="img/sayagain.webp" srcset="img/sayagain.webp 600w, img/sayagain@2x.webp 1070w" sizes="360px" width="600" height="706" alt="Man in a suit gesturing mid-speech, subtitled: can you say that again" loading="lazy" decoding="async">
+              <img src="img/harbor.webp" srcset="img/harbor.webp 600w, img/harbor@2x.webp 1200w" sizes="360px" width="600" height="393" alt="Drawing of boats: a ship in the harbor is safe, but that is not what ships are built for" loading="lazy" decoding="async">
+              <img src="img/mothlamp.webp" srcset="img/mothlamp.webp 600w, img/mothlamp@2x.webp 1200w" sizes="360px" width="600" height="750" alt="Illustration: you pity the moth confusing a lamp for the moon, yet here you are confusing a screen for the world" loading="lazy" decoding="async">
+              <img src="img/skunkworks.webp" srcset="img/skunkworks.webp 600w, img/skunkworks@2x.webp 1200w" sizes="360px" width="600" height="450" alt="Skunk Works chart: get to a prototype, with how fast each aircraft reached first flight" loading="lazy" decoding="async">
+              <img src="img/stopdoingmath.webp" srcset="img/stopdoingmath.webp 600w, img/stopdoingmath@2x.webp 900w" sizes="360px" width="600" height="600" alt="Stop doing math meme" loading="lazy" decoding="async">
+              <img src="img/datacenters.webp" srcset="img/datacenters.webp 600w, img/datacenters@2x.webp 1200w" sizes="360px" width="600" height="797" alt="People lounging on a park lawn beside a data center: build more data centers" loading="lazy" decoding="async">
+              <img src="img/rsa260.webp" srcset="img/rsa260.webp 600w, img/rsa260@2x.webp 828w" sizes="360px" width="600" height="657" alt="Wikipedia entry noting RSA-260 was factored on September 3, 2026" loading="lazy" decoding="async">
               <img src="img/fixeverything.webp" width="556" height="550" alt="Light switch labeled fix everything, easily switch, surrounded by quotes insisting you can&#x27;t just press it" loading="lazy" decoding="async">
-              <img src="img/morningcoffee.webp" width="600" height="600" alt="Drawing of a man in a towel looking out a window beside a steaming moka pot" loading="lazy" decoding="async">
-              <img src="img/deadfish.webp" width="600" height="429" alt="Woodcut fish: only dead fish swim with the current" loading="lazy" decoding="async">
-              <img src="img/eggnog.webp" width="600" height="221" alt="Chat screenshot: consider egg nog, answered with considering eggnog" loading="lazy" decoding="async">
-              <img src="img/sprites.webp" width="600" height="690" alt="Red lightning sprites over a lit hilltop town at night" loading="lazy" decoding="async">
-              <img src="img/bearcam.webp" width="600" height="600" alt="Trail camera catching a bear walking up, then carrying off something in its mouth" loading="lazy" decoding="async">
-              <img src="img/blimp.webp" width="600" height="437" alt="Goodyear blimp edited to look like it&#x27;s breaking the sound barrier" loading="lazy" decoding="async">
-              <img src="img/deadline.webp" width="600" height="840" alt="Parody book cover: Deadline Driven Development, just make it happen" loading="lazy" decoding="async">
-              <img src="img/beyondallbounds.webp" width="600" height="734" alt="Military-style patch: 24th Omnidimensional Operations Squadron, beyond all bounds" loading="lazy" decoding="async">
-              <img src="img/droughtjeans.webp" width="600" height="750" alt="Jeans with a back patch reading drought, here today, gone tomorrow, carried by two tiny figures" loading="lazy" decoding="async">
-              <img src="img/haloring.webp" width="600" height="375" alt="First-person shooter view of a red suspension bridge with a giant ring structure rising into the sky" loading="lazy" decoding="async">
+              <img src="img/morningcoffee.webp" srcset="img/morningcoffee.webp 600w, img/morningcoffee@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Drawing of a man in a towel looking out a window beside a steaming moka pot" loading="lazy" decoding="async">
+              <img src="img/deadfish.webp" srcset="img/deadfish.webp 600w, img/deadfish@2x.webp 735w" sizes="360px" width="600" height="429" alt="Woodcut fish: only dead fish swim with the current" loading="lazy" decoding="async">
+              <img src="img/eggnog.webp" srcset="img/eggnog.webp 600w, img/eggnog@2x.webp 1200w" sizes="360px" width="600" height="221" alt="Chat screenshot: consider egg nog, answered with considering eggnog" loading="lazy" decoding="async">
+              <img src="img/sprites.webp" srcset="img/sprites.webp 600w, img/sprites@2x.webp 1200w" sizes="360px" width="600" height="690" alt="Red lightning sprites over a lit hilltop town at night" loading="lazy" decoding="async">
+              <img src="img/bearcam.webp" srcset="img/bearcam.webp 600w, img/bearcam@2x.webp 1200w" sizes="360px" width="600" height="600" alt="Trail camera catching a bear walking up, then carrying off something in its mouth" loading="lazy" decoding="async">
+              <img src="img/blimp.webp" srcset="img/blimp.webp 600w, img/blimp@2x.webp 1199w" sizes="360px" width="600" height="437" alt="Goodyear blimp edited to look like it&#x27;s breaking the sound barrier" loading="lazy" decoding="async">
+              <img src="img/deadline.webp" srcset="img/deadline.webp 600w, img/deadline@2x.webp 1000w" sizes="360px" width="600" height="840" alt="Parody book cover: Deadline Driven Development, just make it happen" loading="lazy" decoding="async">
+              <img src="img/beyondallbounds.webp" srcset="img/beyondallbounds.webp 600w, img/beyondallbounds@2x.webp 1200w" sizes="360px" width="600" height="734" alt="Military-style patch: 24th Omnidimensional Operations Squadron, beyond all bounds" loading="lazy" decoding="async">
+              <img src="img/droughtjeans.webp" srcset="img/droughtjeans.webp 600w, img/droughtjeans@2x.webp 1080w" sizes="360px" width="600" height="750" alt="Jeans with a back patch reading drought, here today, gone tomorrow, carried by two tiny figures" loading="lazy" decoding="async">
+              <img src="img/haloring.webp" srcset="img/haloring.webp 600w, img/haloring@2x.webp 1200w" sizes="360px" width="600" height="375" alt="First-person shooter view of a red suspension bridge with a giant ring structure rising into the sky" loading="lazy" decoding="async">
               <img src="img/caching.webp" width="500" height="636" alt="Comic joke: every computer program is either caching or compression" loading="lazy" decoding="async">
-              <img src="img/arcoidaho.webp" width="600" height="400" alt="Sign: Arco, Idaho, first city in the world to be lit by atomic power" loading="lazy" decoding="async">
-              <img src="img/surfshower.webp" width="600" height="750" alt="Shower floor tiled like ocean waves with tiny surfers" loading="lazy" decoding="async">
+              <img src="img/arcoidaho.webp" srcset="img/arcoidaho.webp 600w, img/arcoidaho@2x.webp 1200w" sizes="360px" width="600" height="400" alt="Sign: Arco, Idaho, first city in the world to be lit by atomic power" loading="lazy" decoding="async">
+              <img src="img/surfshower.webp" srcset="img/surfshower.webp 600w, img/surfshower@2x.webp 1080w" sizes="360px" width="600" height="750" alt="Shower floor tiled like ocean waves with tiny surfers" loading="lazy" decoding="async">
           </div>
       </main>
       <a class="slinky to-top" href="#top">back to top</a>
