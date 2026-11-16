@@ -122,7 +122,7 @@
     imgs.forEach((im) => { im.sizes = Math.round(Number(size) * 1.4) + 'px'; });
     buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.size === size)));
   };
-  let start = '240';
+  let start = '160';
   try { const saved = localStorage.getItem('stream-size'); if (buttons.some((b) => b.dataset.size === saved)) start = saved; } catch {}
   pick(start);
   buttons.forEach((b) => b.addEventListener('click', () => {
