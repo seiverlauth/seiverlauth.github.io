@@ -48,6 +48,10 @@
           li { display: flex; margin: 0 0 0.4em 0; }
           li:before { content: "⮑"; margin-right: .5em; flex-shrink: 0; }
           .role { margin: 0 0 0.6em 0; }
+          .steps { margin: 0.9em 0 1.2em 0.2em; border-left: 1px solid #c8c9c5; padding-left: 1.2em; }
+          .steps li { display: flex; flex-direction: column; margin: 0 0 0.9em 0; }
+          .steps li:last-child { margin-bottom: 0; }
+          .steps li:before { content: none; }
           .meta { color: #555; }
           ul.plain li:before { content: none; }
           .nudge { width: fit-content; cursor: pointer; }
@@ -72,8 +76,13 @@
             <section>
                 <h2>Roles</h2>
                 <div class="role">
-                    <p>Full Stack Engineer, Intelligems</p>
-                    <p class="meta">San Diego, CA · July 2025 – Present</p>
+                    <p>Intelligems</p>
+                    <p class="meta">San Diego, CA · Remote · July 2025 – Present</p>
+                    <ul class="steps">
+                        <li><span>Full Stack Engineer</span><span class="meta">May 2026 – Present</span></li>
+                        <li><span>Solutions Engineer</span><span class="meta">February 2026 – May 2026</span></li>
+                        <li><span>Customer Support</span><span class="meta">July 2025 – February 2026</span></li>
+                    </ul>
                 </div>
                 <div class="role">
                     <p>Founding Sales Development Representative, Alloy Automation</p>
