@@ -53,10 +53,13 @@
   });
 })();
 
-// Email and phone: clicking copies them (on a computer) and says so.
+// Email and phone: clicking copies them and says so.
 (() => {
-  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return; // phones still open mail/messages
+  // email always copies (phones hand mailto links to whatever app claims them);
+  // text and phone still open Messages on phones, and copy on computers
+  const touch = !matchMedia('(hover: hover) and (pointer: fine)').matches;
   document.querySelectorAll('a[href^="mailto:"], a[href^="sms:"], a[href^="tel:"]').forEach((a) => {
+    if (touch && !a.getAttribute('href').startsWith('mailto:')) return;
     const value = decodeURIComponent(a.getAttribute('href').replace(/^(mailto|sms|tel):/, ''));
     const label = a.textContent;
     let timer;
