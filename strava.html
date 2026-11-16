@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Strava</title>
+        <meta name="description" content="Strava" />
+        <link rel="canonical" href="https://seiverlauth.com/strava.html" />
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://seiverlauth.com/strava.html",
+          "name": "Strava",
+          "about": { "@id": "https://seiverlauth.com/#me" },
+          "isPartOf": { "@id": "https://seiverlauth.com/" }
+        }
+        </script>
+        <link rel="icon" href="fav.png" type="image/png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="preload" href="fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+        <style>
+          @font-face { font-family: "DM Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/dm-mono-400.woff2) format("woff2"); }
+          body {
+            margin: 0;
+            padding: 2em 2em 2em 3em;
+            font-family: 'DM Mono', monospace;
+            text-transform: lowercase;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            line-height: 1.2;
+            background-color: #f3f4f1;
+          }
+          h1,h2,h3,p { padding: 0; margin: 0; font-size: 1em; font-weight: normal; }
+          h1 { margin: 0 0 1em 0; }
+          a { color: #000; text-decoration: none; }
+          a:hover { text-decoration: none; }
+          header, main, footer { width: 34em; max-width: 100%; }
+          header:after, main:after { content: ""; display: block; margin: 1em 0; }
+          footer:before { content: "--"; }
+          footer { margin: 7em 0 2em 0; }
+
+          .feed { list-style: none; margin: 0; padding: 0; }
+          .feed li { margin: 0 0 1.6em 0; line-height: 1.45; }
+          .feed li:before { content: none; }
+          .meta { color: #555; }
+          header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2em; }
+          header::after { display: none; }
+          .key { font-size: 1.15em; line-height: 1.2; margin-bottom: 0.1em; }
+          .note { color: #555; margin: 0 0 2em 0; line-height: 1.45; }
+          ul.plain li:before { content: none; }
+          .nudge { width: fit-content; cursor: pointer; }
+          .swell .word { white-space: nowrap; }
+          .swell .ch { display: inline-block; white-space: pre; transform-origin: 50% 85%; }
+          a[href], summary { position: relative; }
+          a[href]::after, summary::after { content: ""; position: absolute; inset: -3px -6px; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a> &gt; <span>Strava</span>
+            </nav>
+            <a class="profile" href="https://www.strava.com/athletes/42295596" target="_blank" rel="me">profile ↗</a>
+        </header>
+        <main>
+            <ul class="feed">
+                <li>
+                    <p class="key">5.56 mi</p>
+                    <p>Lunch Walk</p>
+                    <p class="meta">Nov 15, 2026 · walk · 1h 44m · 18:45 /mi</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Nov 12, 2026 · run · 37m · 9:26 /mi</p>
+                </li>
+                <li>
+                    <p class="key">6.21 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Nov 9, 2026 · run · 59m · 9:39 /mi</p>
+                </li>
+                <li>
+                    <p class="key">5.02 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Nov 2, 2026 · run · 47m · 9:31 /mi</p>
+                </li>
+                <li>
+                    <p class="key">6.22 mi</p>
+                    <p>Morning Run</p>
+                    <p class="meta">Oct 31, 2026 · run · 57m · 9:20 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 27m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Oct 29, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Oct 28, 2026 · run · 37m · 9:23 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 29m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Oct 27, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">55m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Oct 26, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Walk</p>
+                    <p class="meta">Oct 25, 2026 · walk · 1h 24m · 21:00 /mi</p>
+                </li>
+                <li>
+                    <p class="key">3.12 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Oct 23, 2026 · run · 29m · 9:26 /mi</p>
+                </li>
+                <li>
+                    <p class="key">3.11 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Oct 21, 2026 · run · 30m · 9:43 /mi</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Oct 20, 2026 · run · 38m · 9:33 /mi</p>
+                </li>
+                <li>
+                    <p class="key">57m</p>
+                    <p>Lunch Weight Training</p>
+                    <p class="meta">Oct 17, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 17m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Oct 13, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">5.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Oct 12, 2026 · run · 46m · 9:17 /mi</p>
+                </li>
+                <li>
+                    <p class="key">48m</p>
+                    <p>Morning Weight Training</p>
+                    <p class="meta">Oct 9, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 20m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Oct 8, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 05m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Oct 5, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1.00 mi</p>
+                    <p>Evening Walk</p>
+                    <p class="meta">Oct 2, 2026 · walk · 20m · 20:29 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 05m</p>
+                    <p>Evening Weight Training</p>
+                    <p class="meta">Oct 1, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Sep 30, 2026 · run · 37m · 9:23 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 13m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 29, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">55m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 28, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">2.35 mi</p>
+                    <p>Morning Hike</p>
+                    <p class="meta">Sep 26, 2026 · hike · 1h 10m · 30:08 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 17m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 24, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 25m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 23, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Sep 22, 2026 · run · 36m · 9:12 /mi</p>
+                </li>
+                <li>
+                    <p class="key">57m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 21, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 22m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 18, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">20m</p>
+                    <p>Sauna</p>
+                    <p class="meta">Sep 17, 2026 · workout</p>
+                </li>
+                <li>
+                    <p class="key">1h 22m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 16, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">5.01 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Sep 15, 2026 · run · 47m · 9:31 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 16m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 14, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1,859 yd</p>
+                    <p>Swimothee Chalamet</p>
+                    <p class="meta">Sep 12, 2026 · swim · 34m · 1:50 /100yd</p>
+                </li>
+                <li>
+                    <p class="key">1h 10m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 11, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 44m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 10, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 31m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 9, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Sep 8, 2026 · run · 36m · 9:02 /mi</p>
+                </li>
+                <li>
+                    <p class="key">50m</p>
+                    <p>Lunch Weight Training</p>
+                    <p class="meta">Sep 7, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 21m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Sep 4, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Sep 3, 2026 · run · 37m · 9:15 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 04m</p>
+                    <p>Evening Weight Training</p>
+                    <p class="meta">Sep 1, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 10m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Aug 31, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 10m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Aug 26, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 27m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Aug 25, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">2,269 yd</p>
+                    <p>Evening Swim</p>
+                    <p class="meta">Aug 24, 2026 · swim · 45m · 2:00 /100yd</p>
+                </li>
+                <li>
+                    <p class="key">1h 20m</p>
+                    <p>Lunch Weight Training</p>
+                    <p class="meta">Aug 23, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 11m</p>
+                    <p>Morning Weight Training</p>
+                    <p class="meta">Aug 21, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">57m</p>
+                    <p>Evening Weight Training</p>
+                    <p class="meta">Aug 17, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 42m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Aug 16, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 20m</p>
+                    <p>Lunch Weight Training</p>
+                    <p class="meta">Aug 15, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1h 11m</p>
+                    <p>Evening Weight Training</p>
+                    <p class="meta">Aug 14, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">5.01 mi</p>
+                    <p>Evening Run</p>
+                    <p class="meta">Aug 12, 2026 · run · 45m · 9:06 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1.00 mi</p>
+                    <p>Evening Golf</p>
+                    <p class="meta">Aug 10, 2026 · golf · 30m</p>
+                </li>
+                <li>
+                    <p class="key">4.01 mi</p>
+                    <p>Afternoon Run</p>
+                    <p class="meta">Aug 10, 2026 · run · 36m · 9:03 /mi</p>
+                </li>
+                <li>
+                    <p class="key">1h 23m</p>
+                    <p>Lunch Weight Training</p>
+                    <p class="meta">Aug 9, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1,285 yd</p>
+                    <p>Afternoon Swim</p>
+                    <p class="meta">Aug 8, 2026 · swim · 26m · 2:03 /100yd</p>
+                </li>
+                <li>
+                    <p class="key">58m</p>
+                    <p>Afternoon Weight Training</p>
+                    <p class="meta">Aug 7, 2026 · weights</p>
+                </li>
+                <li>
+                    <p class="key">1,914 yd</p>
+                    <p>Evening Swim</p>
+                    <p class="meta">Aug 5, 2026 · swim · 38m · 2:01 /100yd</p>
+                </li>
+            </ul>
+            <p class="note">powered by strava.</p>
+        </main>
+        <footer>
+            <p>Thanks for stopping by.</p>
+        </footer>
+    <script src="site.js" defer></script>
+    </body>
+</html>

@@ -45,8 +45,9 @@
   let i = 0, idle;
   p.classList.add('nudge'); // gets the same quiet underline as links
   p.addEventListener('click', () => {
-    p.textContent = lines[i];
-    i = (i + 1) % lines.length;
+    // after the last line it comes back to "thanks for stopping by." before starting over
+    p.textContent = i < lines.length ? lines[i] : start;
+    i = (i + 1) % (lines.length + 1);
     clearTimeout(idle);
     idle = setTimeout(() => { p.textContent = start; i = 0; }, 6000);
   });
@@ -140,9 +141,9 @@
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
   box.hidden = true;
-  box.innerHTML = '<figure><img alt=""><figcaption></figcaption></figure>';
+  box.innerHTML = '<figure><img alt=""></figure>';
   document.body.appendChild(box);
-  const big = box.querySelector('img'), cap = box.querySelector('figcaption');
+  const big = box.querySelector('img');
   let current = null;
   const sharp = (im) => {
     const m = (im.getAttribute('srcset') || '').match(/(\S+@2x\.webp)/);
@@ -154,7 +155,6 @@
     const hi = sharp(im);
     if (hi !== big.src) { const pre = new Image(); pre.onload = () => { if (current === im) big.src = hi; }; pre.src = hi; }
     big.alt = im.alt;
-    cap.textContent = im.alt;
     box.hidden = false;
     document.documentElement.classList.add('iso-open');
   };
@@ -209,13 +209,21 @@
     el.setAttribute('aria-label', text);
     el.textContent = '';
     const list = [];
-    for (const ch of text) {
-      const s = document.createElement('span');
-      s.className = 'ch';
-      s.setAttribute('aria-hidden', 'true');
-      s.textContent = ch;
-      el.appendChild(s);
-      list.push({ s, v: 0 });
+    // letters are grouped into words so lines only break between words
+    for (const part of text.split(/(\s+)/)) {
+      if (!part) continue;
+      if (/^\s+$/.test(part)) { el.appendChild(document.createTextNode(part)); continue; }
+      const word = document.createElement('span');
+      word.className = 'word';
+      word.setAttribute('aria-hidden', 'true');
+      for (const ch of part) {
+        const s = document.createElement('span');
+        s.className = 'ch';
+        s.textContent = ch;
+        word.appendChild(s);
+        list.push({ s, v: 0 });
+      }
+      el.appendChild(word);
     }
     el.dataset.split = text;
     letters.set(el, list);

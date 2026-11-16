@@ -100,6 +100,7 @@
             background: #e6e7e3;
           }
           .nudge { width: fit-content; cursor: pointer; }
+          .swell .word { white-space: nowrap; }
           .swell .ch { display: inline-block; white-space: pre; transform-origin: 50% 85%; }
           html { scroll-behavior: smooth; }
           a[href], summary { position: relative; }
@@ -131,8 +132,7 @@
           .iso { position: fixed; inset: 0; z-index: 10; background: rgb(243 244 241 / 0.97); display: grid; place-items: center; padding: 3em 2em; cursor: zoom-out; }
           .iso[hidden] { display: none; }
           .iso figure { margin: 0; max-width: min(1200px, 100%); display: flex; flex-direction: column; align-items: flex-start; gap: 0.9em; }
-          .iso img { display: block; max-width: 100%; max-height: calc(100vh - 9em); width: auto; height: auto; border-radius: 6px; }
-          .iso figcaption { max-width: 60ch; line-height: 1.4; }
+          .iso img { display: block; max-width: 100%; max-height: calc(100vh - 6em); width: auto; height: auto; border-radius: 6px; }
           .iso-open { overflow: hidden; }
         </style>
       </head>
