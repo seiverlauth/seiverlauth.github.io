@@ -34,7 +34,7 @@ def get(path, tok):
 def fetch():
     tok = token()
     url = lambda x: x.get("external_urls", {}).get("spotify", "")
-    artists = [(a["name"], url(a)) for a in get("/me/top/artists?time_range=short_term&limit=10", tok)["items"]]
+    artists = [(a["name"], url(a)) for a in get("/me/top/artists?time_range=long_term&limit=10", tok)["items"]]
     songs = [(t["name"], ", ".join(a["name"] for a in t["artists"]), url(t))
              for t in get("/me/top/tracks?time_range=short_term&limit=10", tok)["items"]]
     recent, seen = [], set()
@@ -75,7 +75,7 @@ def build(artists, songs, recent):
             <a class="profile" href="{PROFILE}" target="_blank" rel="me">profile ↗</a>
         </header>
         <main>
-{block("recently played", [song(*r) for r in recent])}{block("top songs this month", [song(*r) for r in songs])}{block("top artists this month", [li(*r) for r in artists])}        </main>
+{block("recently played", [song(*r) for r in recent])}{block("top songs this month", [song(*r) for r in songs])}{block("top artists all time", [li(*r) for r in artists])}        </main>
         <footer>
             <p>Thanks for stopping by.</p>
         </footer>
