@@ -89,5 +89,41 @@ def build(artists, songs, recent):
     print(f"music.html: {len(artists)} artists, {len(songs)} songs, {len(recent)} recent")
 
 
+def redirect():
+    # nothing to show: send visitors straight to the Spotify profile
+    with open(PAGE, encoding="utf-8") as f:
+        template = f.read()
+    head = template[:template.index("<body>")].replace(
+        "<head>", f'<head>\n        <meta http-equiv="refresh" content="0; url={PROFILE}" />', 1)
+    with open(PAGE, "w", encoding="utf-8") as f:
+        f.write(head + f'''<body>
+    <script>location.replace("{PROFILE}")</script>
+    <p><a href="{PROFILE}">music</a></p>
+    </body>
+</html>
+''')
+    print("music.html: redirecting to Spotify profile")
+
+
+def has_content():
+    with open(PAGE, encoding="utf-8") as f:
+        return 'class="bird"' in f.read()
+
+
 if __name__ == "__main__":
-    build(*(fake() if "--fake" in sys.argv else fetch()))
+    if "--fake" in sys.argv:
+        build(*fake())
+        sys.exit()
+    try:
+        data = fetch()
+    except Exception as e:
+        print(f"Spotify error: {e}")
+        if has_content():
+            print("keeping the last good page")
+        else:
+            redirect()
+        sys.exit()
+    if any(data):
+        build(*data)
+    else:
+        redirect()
